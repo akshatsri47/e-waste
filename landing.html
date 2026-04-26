@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recycle Electronics. Earn Rewards.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae8e7",
+                        "primary-fixed-dim": "#80d9a0",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-fixed": "#00210e",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "secondary": "#316944",
+                        "on-secondary-container": "#37704a",
+                        "on-surface-variant": "#3f4941",
+                        "primary": "#006036",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error": "#ba1a1a",
+                        "tertiary": "#006033",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed-variant": "#00522e",
+                        "on-primary-fixed": "#00210f",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e4e2e2",
+                        "surface": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e2",
+                        "primary-container": "#1a7a4a",
+                        "inverse-primary": "#80d9a0",
+                        "on-secondary-fixed": "#00210e",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#006d3f",
+                        "secondary-fixed": "#b3f1c2",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-container": "#007b44",
+                        "on-background": "#1b1c1c",
+                        "secondary-container": "#b3f1c2",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "outline": "#6f7a70",
+                        "outline-variant": "#bec9be",
+                        "on-primary-container": "#abffc6",
+                        "inverse-surface": "#303030",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#7cfbaa",
+                        "on-tertiary-container": "#aaffc3",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbd9d9",
+                        "primary-fixed": "#9bf6ba"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Roboto Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f8; /* surface */
+            color: #1b1c1c; /* on-surface */
+        }
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #006036, #1a7a4a);
+            color: #ffffff;
+            border-radius: 0.75rem; /* 12dp */
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background-color: #b3f1c2; /* secondary-container */
+            color: #37704a; /* on-secondary-container */
+            border-radius: 0.75rem; /* 12dp */
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+        .glass-card {
+            background-color: rgba(245, 243, 243, 0.7); /* surface-container-low with opacity */
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem; /* 24px */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopNavBar Component -->
+<header class="bg-[#fbf9f8] dark:bg-slate-950 full-width top-0 z-50 sticky transition-all">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto no-border bg-[#f5f3f3] dark:bg-slate-900 flat no-shadows rounded-b-xl">
+<!-- Brand Logo -->
+<a class="text-2xl font-black tracking-tighter text-[#1A7A4A] dark:text-emerald-500 scale-98 active:opacity-80 transition-all font-['Inter']" href="#">
+                Evolve
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#1A7A4A] dark:text-emerald-400 border-b-2 border-[#1A7A4A] pb-1 font-['Inter'] font-semibold headline-md text-slate-900 dark:text-slate-50 scale-98 active:opacity-80 transition-all" href="#">
+                        Marketplace
+                    </a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg font-['Inter'] font-semibold headline-md text-slate-900 dark:text-slate-50 scale-98 active:opacity-80 transition-all" href="#">
+                        Impact
+                    </a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg font-['Inter'] font-semibold headline-md text-slate-900 dark:text-slate-50 scale-98 active:opacity-80 transition-all" href="#">
+                        Tokens
+                    </a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg font-['Inter'] font-semibold headline-md text-slate-900 dark:text-slate-50 scale-98 active:opacity-80 transition-all" href="#">
+                        Governance
+                    </a>
+</nav>
+<!-- Actions & Search -->
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-[#1A7A4A] bg-transparent hover:bg-[#e4e2e2] rounded-lg transition-colors scale-98 active:opacity-80" href="#">
+                    Log In
+                </a>
+<a class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-[#006036] to-[#1A7A4A] rounded-lg shadow-sm hover:opacity-90 transition-opacity scale-98 active:opacity-80" href="#">
+                    Get Started
+                </a>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<section class="w-full bg-primary text-on-primary py-24 px-8 relative overflow-hidden rounded-3xl mx-4 mt-8 max-w-[1376px]">
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0wIDQwTDIwIDIwTDAgME00MCA0MEwyMCAyMEw0MCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+<h1 class="text-[3.5rem] leading-tight font-bold font-headline mb-6 tracking-tight">
+                    Recycle Electronics. <br/>Earn Rewards.
+                </h1>
+<p class="text-lg font-body text-primary-fixed mb-10 max-w-2xl">
+                    India's first gamified e-waste pickup platform. Turn your old devices into impact tokens and track your environmental contribution in real-time.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-highest transition-colors shadow-sm">
+                        Start Recycling
+                    </button>
+<button class="bg-transparent border border-primary-fixed text-primary-fixed px-8 py-4 rounded-xl font-semibold hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors">
+                        View Map
+                    </button>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="w-full py-24 px-8 max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-[1.75rem] font-semibold font-headline text-on-surface mb-4">The Living Ledger Process</h2>
+<p class="text-on-surface-variant font-body">Three simple steps to verified sustainability.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-low rounded-[24px] p-8 flex flex-col items-center text-center relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-6 text-on-primary-container shadow-[0_8px_24px_rgba(26,122,74,0.15)]">
+<span class="material-symbols-outlined text-3xl" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="text-lg font-semibold font-headline text-on-surface mb-2">Schedule Pickup</h3>
+<p class="text-sm font-body text-on-surface-variant">Log your e-waste and choose a convenient time for our certified partners to arrive.</p>
+<div class="absolute top-8 right-8 text-[4rem] font-black text-surface-variant opacity-30 font-mono select-none">01</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low rounded-[24px] p-8 flex flex-col items-center text-center relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-6 text-on-secondary-container shadow-[0_8px_24px_rgba(179,241,194,0.3)]">
+<span class="material-symbols-outlined text-3xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h3 class="text-lg font-semibold font-headline text-on-surface mb-2">We Collect</h3>
+<p class="text-sm font-body text-on-surface-variant">Secure handover to verified recycling agents. Real-time tracking included.</p>
+<div class="absolute top-8 right-8 text-[4rem] font-black text-surface-variant opacity-30 font-mono select-none">02</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low rounded-[24px] p-8 flex flex-col items-center text-center relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center mb-6 text-on-tertiary-container shadow-[0_8px_24px_rgba(0,123,68,0.2)]">
+<span class="material-symbols-outlined text-3xl" data-icon="token">token</span>
+</div>
+<h3 class="text-lg font-semibold font-headline text-on-surface mb-2">Earn Tokens</h3>
+<p class="text-sm font-body text-on-surface-variant">Receive EVOLVE tokens immediately upon verification. Redeem in the marketplace.</p>
+<div class="absolute top-8 right-8 text-[4rem] font-black text-surface-variant opacity-30 font-mono select-none">03</div>
+</div>
+</div>
+</section>
+<!-- Benefits Strip -->
+<section class="w-full bg-surface-container-high py-16 px-8 rounded-3xl mx-4 mb-24 max-w-[1376px]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center text-center md:px-8 py-4 md:py-0">
+<span class="text-3xl font-bold font-mono text-primary mb-2">1,240</span>
+<span class="text-sm font-semibold font-headline text-on-surface uppercase tracking-wider mb-2">Token Rewards</span>
+<p class="text-xs font-body text-on-surface-variant">Average tokens earned per active user.</p>
+</div>
+<div class="flex flex-col items-center text-center md:px-8 py-4 md:py-0">
+<span class="text-3xl font-bold font-mono text-secondary mb-2">450kg</span>
+<span class="text-sm font-semibold font-headline text-on-surface uppercase tracking-wider mb-2">Real CO2 Impact</span>
+<p class="text-xs font-body text-on-surface-variant">Carbon offset per tonne of recycled material.</p>
+</div>
+<div class="flex flex-col items-center text-center md:px-8 py-4 md:py-0">
+<span class="text-3xl font-bold font-mono text-tertiary mb-2">100%</span>
+<span class="text-sm font-semibold font-headline text-on-surface uppercase tracking-wider mb-2">Certified Recyclers</span>
+<p class="text-xs font-body text-on-surface-variant">All partners are government approved.</p>
+</div>
+</div>
+</section>
+<!-- Map Preview Teaser -->
+<section class="w-full max-w-5xl mx-auto px-8 mb-24 relative">
+<div class="relative rounded-[24px] overflow-hidden bg-surface-container-highest h-[400px] flex items-center justify-center group">
+<!-- Map Background (Blurred Teaser) -->
+<div class="absolute inset-0 bg-surface-container-highest">
+<img alt="Map Preview" class="w-full h-full object-cover opacity-40 blur-sm scale-105 group-hover:blur-md transition-all duration-700" data-alt="abstract stylized map view of a modern city grid with soft green and grey tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMxzEzlR-xRFlHMjaSvXNCcackrg75TgxwuErrTbCiV489NvM2aEHn8kKVg43fxCt7IHTQfcFaLL_TxFJ35sonnz9t3msDT672-OzYM48klWR5yGIa4dDzBeIOLGTEeACF7Jkt68g1fAQeuUvWclBgBP_IVx8IUyVyDtn-c_rHz2OuuvTB7CQjAJzMh7rWR8ZLqrYy4mmm7zwHS3GGLbG3_6ctWCteoWLqCIq1wJouJ96rRHbip46AZ9PgJtNDHiDSEDj-Po4iBbE"/>
+</div>
+<!-- Glass Overlay Content -->
+<div class="glass-card p-10 max-w-md text-center z-10 mx-4">
+<h3 class="text-[1.75rem] font-semibold font-headline text-on-surface mb-4">Find certified recyclers near you</h3>
+<p class="text-on-surface-variant font-body mb-8">View our network of trusted partners and local drop-off zones across India.</p>
+<button class="btn-primary w-full shadow-[0_16px_32px_rgba(27,28,28,0.06)]">
+                        View Map
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-[#fbf9f8] dark:bg-slate-950 full-width py-12 border-t border-[#bec9be]/15 w-full">
+<div class="w-full px-8 max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-slate-50 font-['Inter']">Evolve</span>
+<p class="text-[#1A7A4A] dark:text-emerald-400 font-['Inter'] text-sm leading-relaxed">
+                    © 2024 Project Evolve. The Living Ledger.
+                </p>
+</div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 dark:text-slate-500 hover:text-[#1A7A4A] transition-colors opacity-100 hover:opacity-80 font-['Inter'] text-sm" href="#">
+                    Sustainability Report
+                </a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-[#1A7A4A] transition-colors opacity-100 hover:opacity-80 font-['Inter'] text-sm" href="#">
+                    Privacy Policy
+                </a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-[#1A7A4A] transition-colors opacity-100 hover:opacity-80 font-['Inter'] text-sm" href="#">
+                    Terms of Service
+                </a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-[#1A7A4A] transition-colors opacity-100 hover:opacity-80 font-['Inter'] text-sm" href="#">
+                    API Status
+                </a>
+</div>
+</div>
+</footer>
+</body></html>
