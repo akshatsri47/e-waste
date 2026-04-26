@@ -46,10 +46,10 @@ export default function GoogleOneTap() {
         google.accounts.id.prompt()
     }
 
-    return (s
+    return (
         <Script
             src="https://accounts.google.com/gsi/client"
-            onReady={initializeOneTap}
+            onReady={() => { initializeOneTap() }}
         />
     )
 }

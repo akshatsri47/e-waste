@@ -154,7 +154,7 @@ export default async function ImpactDashboard() {
                const isCurrent = i === 5
 
                return (
-                 <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', height: '100%', position: 'relative', group: 'true' }}>
+                 <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', height: '100%', position: 'relative' }}>
                    <div style={{ width: '100%', maxWidth: '80px', backgroundColor: '#eae8e7', borderRadius: '12px 12px 0 0', position: 'relative', display: 'flex', alignItems: 'flex-end', height: '100%', overflow: 'hidden' }}>
                       <div style={{ 
                         width: '100%', 

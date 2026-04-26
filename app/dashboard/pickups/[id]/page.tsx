@@ -77,10 +77,10 @@ export default async function PickupDetailPage({ params }: { params: Promise<{ i
       </header>
 
       {/* Bento Grid Layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '24px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
         
         {/* Left Column (Span 8) */}
-        <div style={{ gridColumn: '1 / -1', lg: { gridColumn: 'span 8' }, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ flex: '2 1 600px', display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0 }}>
           
           {/* Reward Card */}
           <section style={{ background: 'linear-gradient(135deg, #006036 0%, #1a7a4a 100%)', borderRadius: '16px', padding: '32px', color: '#ffffff', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
@@ -181,7 +181,7 @@ export default async function PickupDetailPage({ params }: { params: Promise<{ i
         </div>
 
         {/* Right Column (Span 4) */}
-        <div style={{ gridColumn: '1 / -1', lg: { gridColumn: 'span 4' }, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0 }}>
           
           {/* Location Card */}
           <section style={{ backgroundColor: '#f5f3f3', borderRadius: '16px', border: '1px solid rgba(190, 201, 190, 0.15)', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>

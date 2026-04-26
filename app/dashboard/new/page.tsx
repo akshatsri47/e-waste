@@ -227,7 +227,7 @@ export default function NewPickupPage() {
                 <div>
                   <p style={{ fontSize: '14px', color: '#3f4941', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px', fontWeight: 600 }}>Date & Time</p>
                   <p style={{ fontSize: '16px', fontWeight: 600, color: '#1b1c1c' }}>{new Date(timeSlot).toLocaleDateString()}</p>
-                  <p style={{ fontSize: '14px', color: '#3f4941', mt: 1 }}>{new Date(timeSlot).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                  <p style={{ fontSize: '14px', color: '#3f4941', marginTop: '4px' }}>{new Date(timeSlot).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                 </div>
               </div>
 
@@ -238,7 +238,7 @@ export default function NewPickupPage() {
                 <div>
                   <p style={{ fontSize: '14px', color: '#3f4941', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px', fontWeight: 600 }}>Location</p>
                   <p style={{ fontSize: '16px', fontWeight: 600, color: '#1b1c1c' }}>{pickupType === 'pickup' ? 'Home Pickup' : 'Drop-off Center'}</p>
-                  <p style={{ fontSize: '14px', color: '#3f4941', mt: 1 }}>{pickupType === 'pickup' ? address : recyclers.find(r => r.id === recyclerId)?.name}</p>
+                  <p style={{ fontSize: '14px', color: '#3f4941', marginTop: '4px' }}>{pickupType === 'pickup' ? address : recyclers.find(r => r.id === recyclerId)?.name}</p>
                 </div>
               </div>
             </div>
