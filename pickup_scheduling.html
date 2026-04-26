@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Evolve - Schedule Pickup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-dim": "#dbd9d9",
+                        "surface-container": "#efeded",
+                        "surface-variant": "#e4e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "tertiary": "#006033",
+                        "inverse-primary": "#80d9a0",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#007b44",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "primary-fixed-dim": "#80d9a0",
+                        "on-primary-container": "#abffc6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#00210e",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#7cfbaa",
+                        "primary-container": "#1a7a4a",
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9f8",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "surface-container-high": "#eae8e7",
+                        "secondary-fixed": "#b3f1c2",
+                        "primary": "#006036",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#37704a",
+                        "surface-tint": "#006d3f",
+                        "on-primary-fixed": "#00210f",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed": "#00210e",
+                        "primary-fixed": "#9bf6ba",
+                        "on-tertiary-container": "#aaffc3",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#3f4941",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f8",
+                        "secondary-container": "#b3f1c2",
+                        "secondary": "#316944",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bec9be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Roboto Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen antialiased flex">
+<!-- Persistent Left Sidebar -->
+<nav class="w-[280px] h-screen fixed left-0 top-0 bg-[#f5f3f3]/70 dark:bg-[#1b1c1c]/70 backdrop-blur-[20px] flex flex-col justify-between py-10 px-6 z-40">
+<div>
+<div class="font-['Inter'] font-extrabold text-xl text-[#006036] dark:text-[#1a7a4a] mb-8">
+                Project Evolve
+            </div>
+<button class="w-full mb-8 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-[12px] px-4 py-3 font-semibold shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                Schedule New Pickup
+            </button>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center gap-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Item Selection</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 bg-[#006036] text-white rounded-full px-4 py-3 font-semibold shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Schedule Pickup</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Confirmation</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Token Wallet</span>
+</a>
+</li>
+</ul>
+</div>
+<div>
+<ul class="space-y-2 mb-6">
+<li>
+<a class="flex items-center gap-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-['Inter'] text-[0.875rem] font-medium tracking-tight">Support</span>
+</a>
+</li>
+</ul>
+<div class="flex items-center gap-3 px-4">
+<img alt="Priya Sharma's Avatar" class="w-8 h-8 rounded-full" data-alt="Small circular avatar image of Priya Sharma with a dark green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUb85RRehlu3kha4a-IFH4FgRZHmDBdqRavlkyzsZKPhhevxGY0IBJuelo0229YEICeT_J_D6kcRP6VdhbyP-vn45Ji9MNr7l8cu3rgVJuriA3yerwC7tOPCWn-zyLr8KCMSmZmPitj3N68nFvnAN4kY61uMcGIoxSJ509HeAm5sIKobqH6ZZj7mFFmwm2V-c79V3Mlym3wXqdoKJHR8dAgdqPs-5gfPqFJHuyRw_OJaA4X-AqxLwDzQRYKXQjZBFizH7ImhbRta4"/>
+<div>
+<div class="font-['Inter'] text-[0.875rem] font-semibold text-on-surface">Priya Sharma</div>
+<div class="font-['Inter'] text-[0.75rem] text-on-surface-variant">Sustainability Advocate</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-[280px] flex-1 min-h-screen bg-surface flex flex-col relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-20 bg-[#fbf9f8]/80 dark:bg-[#1b1c1c]/80 backdrop-blur-md flex items-center justify-between px-12 z-30">
+<h1 class="font-['Inter'] text-[1.75rem] font-semibold headline-md text-[#006036] dark:text-[#1a7a4a]">Schedule Pickup</h1>
+<div class="flex items-center gap-6">
+<div class="flex gap-4 text-[#006036] dark:text-[#1a7a4a]">
+<button class="hover:opacity-70 transition-opacity cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:opacity-70 transition-opacity cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="mt-20 px-12 py-8 max-w-[1200px] w-full mx-auto grid grid-cols-12 gap-8">
+<!-- Left Form Area (8 cols) -->
+<div class="col-span-8 flex flex-col gap-8">
+<!-- Progress Stepper (Custom non-line) -->
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">1</div>
+<span class="text-sm font-medium text-on-surface-variant">Items</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-sm">chevron_right</span>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">2</div>
+<span class="text-sm font-semibold text-primary">Schedule</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-sm">chevron_right</span>
+<div class="flex items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">3</div>
+<span class="text-sm font-medium text-on-surface-variant">Confirm</span>
+</div>
+</div>
+<!-- Address Section -->
+<section class="bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_16px_32px_rgba(27,28,28,0.06)]">
+<h2 class="font-headline text-xl font-semibold mb-6 text-on-surface">Pickup Address</h2>
+<div class="grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block text-sm font-medium text-on-surface-variant mb-2">Address Line 1</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-shadow" type="text" value="Apt 4B, Greenview Complex"/>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-medium text-on-surface-variant mb-2">Address Line 2 (Optional)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-shadow" type="text" value="Eco District"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-2">City</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-shadow" type="text" value="Portland"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-2">PIN / Zip Code</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md font-mono transition-shadow" type="text" value="97204"/>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-medium text-on-surface-variant mb-2">Landmark</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-shadow" placeholder="e.g. Near Central Park" type="text"/>
+</div>
+</div>
+</section>
+<!-- Time Slot Section -->
+<section class="bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_16px_32px_rgba(27,28,28,0.06)] mb-20">
+<h2 class="font-headline text-xl font-semibold mb-6 text-on-surface">Preferred Time</h2>
+<div class="mb-6">
+<label class="block text-sm font-medium text-on-surface-variant mb-4">Select Date</label>
+<div class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
+<!-- Active Date -->
+<button class="flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-xl bg-primary-fixed text-on-primary-fixed transition-transform active:scale-95">
+<span class="text-sm font-medium">Mon</span>
+<span class="text-2xl font-bold font-mono mt-1">12</span>
+<span class="text-xs mt-1">Oct</span>
+</button>
+<!-- Inactive Dates -->
+<button class="flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-xl bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all active:scale-95 border border-outline-variant/15">
+<span class="text-sm font-medium text-on-surface-variant">Tue</span>
+<span class="text-2xl font-bold font-mono mt-1">13</span>
+<span class="text-xs mt-1 text-on-surface-variant">Oct</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-xl bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all active:scale-95 border border-outline-variant/15">
+<span class="text-sm font-medium text-on-surface-variant">Wed</span>
+<span class="text-2xl font-bold font-mono mt-1">14</span>
+<span class="text-xs mt-1 text-on-surface-variant">Oct</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-xl bg-surface-container-low hover:bg-surface-variant text-on-surface transition-all active:scale-95 border border-outline-variant/15">
+<span class="text-sm font-medium text-on-surface-variant">Thu</span>
+<span class="text-2xl font-bold font-mono mt-1">15</span>
+<span class="text-xs mt-1 text-on-surface-variant">Oct</span>
+</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-4">Time Window</label>
+<div class="grid grid-cols-3 gap-4">
+<button class="py-4 px-6 rounded-xl border border-primary bg-primary/5 text-primary font-medium flex flex-col items-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined">light_mode</span>
+<span>Morning</span>
+<span class="text-xs font-mono opacity-80">09:00 - 12:00</span>
+</button>
+<button class="py-4 px-6 rounded-xl border border-outline-variant/15 bg-surface-container-low hover:bg-surface-variant text-on-surface font-medium flex flex-col items-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined">wb_sunny</span>
+<span>Afternoon</span>
+<span class="text-xs font-mono opacity-80">12:00 - 16:00</span>
+</button>
+<button class="py-4 px-6 rounded-xl border border-outline-variant/15 bg-surface-container-low hover:bg-surface-variant text-on-surface font-medium flex flex-col items-center gap-2 transition-all active:scale-95 opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined">dark_mode</span>
+<span>Evening</span>
+<span class="text-xs font-mono opacity-80">Full</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar: Order Summary (4 cols) -->
+<div class="col-span-4 relative">
+<div class="sticky top-28 bg-surface-container-low rounded-[24px] p-6">
+<h3 class="font-headline text-lg font-semibold text-on-surface mb-6">Summary</h3>
+<div class="space-y-6">
+<!-- Items Summary -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center bg-surface p-4 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">laptop_mac</span>
+</div>
+<div>
+<p class="text-sm font-medium">Electronics</p>
+<p class="text-xs text-on-surface-variant">2 items</p>
+</div>
+</div>
+<span class="font-mono text-sm font-bold text-primary">+120</span>
+</div>
+<div class="flex justify-between items-center bg-surface p-4 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">checkroom</span>
+</div>
+<div>
+<p class="text-sm font-medium">Textiles</p>
+<p class="text-xs text-on-surface-variant">1 bag (5kg)</p>
+</div>
+</div>
+<span class="font-mono text-sm font-bold text-primary">+50</span>
+</div>
+</div>
+<!-- Est Tokens -->
+<div class="bg-primary-container p-6 rounded-xl relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[100px]">eco</span>
+</div>
+<p class="text-sm text-on-primary-container mb-1 uppercase tracking-wider font-medium">Est. Token Reward</p>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-3xl font-bold text-on-primary">170</span>
+<span class="text-on-primary-container text-sm">TOKENS</span>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 px-6 rounded-[12px] font-semibold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] mt-4">
+                            Confirm Schedule
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-xs text-center text-on-surface-variant mt-2">By confirming, you agree to our pickup terms.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickup Confirmation - Project Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-dim": "#dbd9d9",
+                        "surface-container": "#efeded",
+                        "surface-variant": "#e4e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "tertiary": "#006033",
+                        "inverse-primary": "#80d9a0",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#007b44",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "primary-fixed-dim": "#80d9a0",
+                        "on-primary-container": "#abffc6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#00210e",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#7cfbaa",
+                        "primary-container": "#1a7a4a",
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9f8",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "surface-container-high": "#eae8e7",
+                        "secondary-fixed": "#b3f1c2",
+                        "primary": "#006036",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#37704a",
+                        "surface-tint": "#006d3f",
+                        "on-primary-fixed": "#00210f",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed": "#00210e",
+                        "primary-fixed": "#9bf6ba",
+                        "on-tertiary-container": "#aaffc3",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#3f4941",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f8",
+                        "secondary-container": "#b3f1c2",
+                        "secondary": "#316944",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bec9be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Roboto Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen overflow-hidden flex">
+<!-- Sidebar Navigation -->
+<nav class="hidden md:flex w-[280px] h-screen fixed left-0 top-0 bg-surface-container-low/70 backdrop-blur-[20px] flex-col justify-between py-10 px-6 z-40 border-r-0">
+<div>
+<div class="font-headline font-extrabold text-xl text-primary mb-8">Project Evolve</div>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center gap-3 text-on-surface hover:bg-surface-variant rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Item Selection</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface hover:bg-surface-variant rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Schedule Pickup</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 bg-primary text-on-primary rounded-full px-4 py-3 font-semibold shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Confirmation</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface hover:bg-surface-variant rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Token Wallet</span>
+</a>
+</li>
+</ul>
+</div>
+<div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl py-3 font-medium mb-6 shadow-sm hover:opacity-90 transition-opacity">Schedule New Pickup</button>
+<ul class="space-y-2 mb-6 border-t border-outline-variant/15 pt-6">
+<li>
+<a class="flex items-center gap-3 text-on-surface hover:bg-surface-variant rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface hover:bg-surface-variant rounded-full px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body text-[0.875rem] font-medium tracking-tight">Support</span>
+</a>
+</li>
+</ul>
+<div class="flex items-center gap-3 px-4">
+<img alt="Priya Sharma's Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of a young professional woman smiling softly, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3-Plq1M1rnu2N129HTAUeM0EWxE6SSUJTVwlWeI3iGNHrE5WFIGtOqaAWGTeBtl9QiWx1jfGVowzxr6Lzvtv6UjhkQZqhWYz9LyF_-7ZCOsAizUEMTmlZZx2Chz1a0l-i6KFE3JDT4n-N20kp-0iMtiKVN-uYMrhYfXjyOHp96MwERei-etQzRjfB5hHr5s2ye8aH6e_3TWgHru6-634ckAsFjTUut21-QoaEsX6XxTQuVyWMiAZ3XAX2QSSQkk2I7jpSmwrOFw"/>
+<div>
+<p class="font-headline text-[0.875rem] font-semibold text-on-surface">Priya Sharma</p>
+<p class="font-body text-[0.75rem] text-on-surface-variant">Sustainability Advocate</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Top App Bar -->
+<header class="hidden md:flex fixed top-0 right-0 w-[calc(100%-280px)] h-20 bg-surface-bright/80 backdrop-blur-md items-center justify-end px-12 z-30">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:opacity-70 transition-opacity cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[24px]" data-icon="notifications">notifications</span>
+</button>
+<button class="text-primary hover:opacity-70 transition-opacity cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[24px]" data-icon="eco">eco</span>
+</button>
+<img alt="Priya Sharma" class="w-10 h-10 rounded-full object-cover cursor-pointer hover:opacity-90 transition-opacity" data-alt="Portrait of a young professional woman smiling softly, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq35AObZoZcy7fPQZgN24xqia_swJmT9aV2MeuZ3Q55So30oTopvDjSPVnEAevUmMFMAKyrgHmjL6J0vTuURn_9X0QkkeTTUtq7srvM8RF59nzLzbLlczyZIPHuUGDz5UHYafl-V-CuYF2fxQOK5ZdkKyS_IchM2YKgW3uqnpU27Rabmeuza-alqCfBFup3TBxfRgC-1hkL2nQ6X3i5wMuPxt0IdNz51QzsKhfz7u8ckFBGhfSExkwd82P5T2sD9hXNBaHIzO4nj8"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[280px] mt-20 p-12 overflow-y-auto bg-surface relative flex items-center justify-center">
+<!-- Background Decor -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.03]">
+<span class="material-symbols-outlined text-[600px] text-primary" data-icon="verified">verified</span>
+</div>
+<div class="max-w-2xl w-full z-10 flex flex-col items-center">
+<!-- Success Icon & Headline -->
+<div class="flex flex-col items-center mb-12 text-center">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center mb-6 shadow-[0_16px_32px_rgba(27,28,28,0.06)]">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+<h1 class="font-headline text-[3.5rem] font-bold text-on-surface leading-tight tracking-tight">Pickup Scheduled!</h1>
+<p class="font-body text-[1rem] text-on-surface-variant mt-4 max-w-md">Your sustainable action has been recorded. We're looking forward to collecting your items.</p>
+</div>
+<!-- Booking Reference Card -->
+<div class="w-full bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_16px_32px_rgba(27,28,28,0.06)] mb-10 border border-outline-variant/15 relative overflow-hidden">
+<!-- Subtle Gradient Accent -->
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-primary-container"></div>
+<div class="flex flex-col gap-8">
+<!-- Booking ID -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<p class="font-body text-[0.875rem] text-on-surface-variant uppercase tracking-wider mb-1">Booking Reference</p>
+<p class="font-mono text-[1.375rem] font-medium text-on-surface bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/15">EVL-20250722-0091</p>
+</div>
+<div class="bg-secondary-container px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="pending_actions">pending_actions</span>
+<span class="font-body text-[0.875rem] font-medium text-primary">Status: Confirmed</span>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/15"></div>
+<!-- Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="event">event</span>
+</div>
+<div>
+<p class="font-body text-[0.875rem] text-on-surface-variant uppercase tracking-wider mb-1">Date &amp; Time</p>
+<p class="font-headline text-[1rem] font-semibold text-on-surface">Tuesday, July 22, 2025</p>
+<p class="font-body text-[0.875rem] text-on-surface-variant mt-1">10:00 AM - 12:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-body text-[0.875rem] text-on-surface-variant uppercase tracking-wider mb-1">Pickup Address</p>
+<p class="font-headline text-[1rem] font-semibold text-on-surface">42 Eco Way, Apt 3B</p>
+<p class="font-body text-[0.875rem] text-on-surface-variant mt-1">Portland, OR 97204</p>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/15"></div>
+<!-- Items Summary -->
+<div>
+<p class="font-body text-[0.875rem] text-on-surface-variant uppercase tracking-wider mb-4">Items to be collected</p>
+<div class="flex flex-wrap gap-3">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/15 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="devices">devices</span>
+<span class="font-body text-[0.875rem] text-on-surface">E-Waste (2)</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/15 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="checkroom">checkroom</span>
+<span class="font-body text-[0.875rem] text-on-surface">Textiles (1 bag)</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/15 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="battery_charging_full">battery_charging_full</span>
+<span class="font-body text-[0.875rem] text-on-surface">Batteries (Small Box)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+<button class="w-full sm:w-auto px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-headline font-semibold text-[1rem] shadow-[0_4px_12px_rgba(0,96,54,0.2)] hover:opacity-90 transition-opacity active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
+                    Back to Home
+                </button>
+<button class="w-full sm:w-auto px-8 py-3 bg-surface-container-highest text-on-surface rounded-xl font-headline font-semibold text-[1rem] hover:bg-surface-dim transition-colors active:scale-95 flex items-center justify-center gap-2 border border-outline-variant/15">
+<span class="material-symbols-outlined text-[20px]" data-icon="event_note">event_note</span>
+                    Add to Calendar
+                </button>
+</div>
+</div>
+</main>
+</body></html>

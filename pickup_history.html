@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Evolve - Pickup History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e7",
+                    "on-primary-container": "#abffc6",
+                    "on-surface-variant": "#3f4941",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "tertiary-fixed-dim": "#5ede90",
+                    "on-primary-fixed-variant": "#00522e",
+                    "surface": "#fbf9f8",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6f7a70",
+                    "inverse-surface": "#303030",
+                    "surface-variant": "#e4e2e2",
+                    "on-tertiary-fixed": "#00210e",
+                    "primary-fixed": "#9bf6ba",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#80d9a0",
+                    "surface-tint": "#006d3f",
+                    "on-secondary-container": "#37704a",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#16512e",
+                    "secondary-container": "#b3f1c2",
+                    "tertiary-fixed": "#7cfbaa",
+                    "surface-bright": "#fbf9f8",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-tertiary-container": "#aaffc3",
+                    "secondary-fixed": "#b3f1c2",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a7a4a",
+                    "surface-container-low": "#f5f3f3",
+                    "secondary-fixed-dim": "#98d4a7",
+                    "background": "#fbf9f8",
+                    "primary": "#006036",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#80d9a0",
+                    "secondary": "#316944",
+                    "tertiary-container": "#007b44",
+                    "surface-dim": "#dbd9d9",
+                    "tertiary": "#006033",
+                    "outline-variant": "#bec9be",
+                    "on-primary-fixed": "#00210f",
+                    "surface-container": "#efeded",
+                    "on-secondary-fixed": "#00210e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "mono": ["Roboto Mono", "monospace"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        
+        /* Utility for ambient shadows */
+        .ambient-shadow {
+            box-shadow: 0 16px 32px -8px rgba(27, 28, 28, 0.06);
+        }
+        
+        /* Primary CTA Gradient */
+        .primary-gradient {
+            background: linear-gradient(135deg, #006036 0%, #1a7a4a 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col py-8 px-4 gap-2 bg-surface-container-low/70 backdrop-blur-[20px] w-[280px] h-screen sticky top-0 left-0 no-border tonal-stacking shadow-[32px_0_32px_-16px_rgba(27,28,28,0.06)] z-40">
+<div class="mb-12 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm" data-icon="eco">eco</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-primary tracking-tighter leading-tight">Project Evolve</h1>
+<p class="font-sans text-[0.6875rem] font-medium tracking-tight text-on-surface-variant">The Living Ledger</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 font-sans text-sm font-medium tracking-tight">
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-full hover:bg-surface-container-highest transition-all duration-300 scale-[0.99] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Active (Semantic match: Dashboard/History) -->
+<a class="flex items-center gap-3 bg-primary-fixed text-on-primary-fixed rounded-full px-4 py-3 font-semibold transition-all duration-300 scale-[0.99] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="eco" data-weight="fill" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span>ESG Reporting</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-full hover:bg-surface-container-highest transition-all duration-300 scale-[0.99] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span>Project Evolve</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-full hover:bg-surface-container-highest transition-all duration-300 scale-[0.99] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Data Analytics</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 rounded-full hover:bg-surface-container-highest transition-all duration-300 scale-[0.99] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Corporate Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-full primary-gradient text-on-primary rounded-xl px-4 py-3 font-semibold text-sm transition-all duration-300 hover:opacity-90 scale-[0.99] active:scale-95">
+                Export Report
+            </button>
+<div class="flex items-center gap-3 px-4 py-3">
+<img alt="Priya Sharma" class="w-8 h-8 rounded-full object-cover" data-alt="professional headshot of an indian woman with dark hair smiling gently, bright soft lighting, blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl4xrkKqhICLA8yWdNpE-vlolV8Cc2avntwL2jzsm8s7x38EEnWjQ_2Nl2B8rA0PJydwTDAcwuPqiFq8pNoWN_Z5hUTVEIePDCv--qP2Yn4lHestA7xntBA39v46mCT2aePGIqLmYmXkCChjRGsZjTVPkKZqG5qkVfsziM2FT5i8qiq523CyB-zjV6tf8joMS2ItiKE6S5eCzI2yBdcUFf1RdlnxL82BHtrj3DmqBP8fMudZgmV1_3ZZlaySAOZ1X86qqJAVr8H5k"/>
+<span class="font-sans text-sm font-medium tracking-tight text-on-surface-variant">Priya Sharma</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-h-screen relative max-w-[1200px] mx-auto w-full px-6 py-12 md:px-12 lg:px-16 overflow-y-auto">
+<!-- TopAppBar (Mobile Fallback) -->
+<header class="md:hidden flex items-center justify-between mb-8 pb-4">
+<h1 class="text-2xl font-black text-primary">Project Evolve</h1>
+<button class="text-on-surface-variant p-2 rounded-full bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<p class="text-[0.6875rem] font-mono font-bold text-on-surface-variant tracking-widest uppercase mb-2">Logistics Ledger</p>
+<h1 class="text-[1.75rem] font-semibold font-headline text-on-surface leading-tight">Pickup History</h1>
+<p class="text-[0.875rem] font-body text-on-surface-variant mt-2 max-w-xl">A comprehensive record of all scheduled, completed, and cancelled collection events associated with your facility.</p>
+</div>
+<button class="flex items-center justify-center gap-2 primary-gradient text-on-primary rounded-xl px-6 py-3 font-semibold text-sm transition-all duration-300 hover:opacity-90 self-start md:self-auto">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                Schedule Pickup
+            </button>
+</div>
+<!-- Filters (Tabs) -->
+<div class="flex items-center gap-2 mb-8 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0 hide-scrollbar">
+<button class="px-5 py-2.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold text-sm whitespace-nowrap transition-colors">
+                All
+            </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest font-medium text-sm whitespace-nowrap transition-colors">
+                Scheduled
+            </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest font-medium text-sm whitespace-nowrap transition-colors">
+                Completed
+            </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest font-medium text-sm whitespace-nowrap transition-colors">
+                Cancelled
+            </button>
+<div class="ml-auto hidden md:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant/50 text-xl" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low border border-outline-variant/15 text-sm w-48 focus:border-primary focus:ring-0 focus:outline-none transition-all placeholder:text-on-surface-variant/50 font-mono" placeholder="Search by ID..." type="text"/>
+</div>
+</div>
+<!-- SaaS Data Table (Bento Style Rows) -->
+<div class="flex flex-col gap-4 mb-16">
+<!-- Table Header (Hidden on small screens, visual only) -->
+<div class="hidden md:grid grid-cols-12 gap-4 px-6 py-2 text-[0.6875rem] font-mono font-bold text-on-surface-variant uppercase tracking-widest">
+<div class="col-span-2">Status</div>
+<div class="col-span-3">Booking ID</div>
+<div class="col-span-4">Items Summary</div>
+<div class="col-span-2">Date</div>
+<div class="col-span-1 text-right">Actions</div>
+</div>
+<!-- Row 1: Scheduled -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow hover:bg-surface-container-low transition-colors duration-300 relative group cursor-pointer">
+<div class="col-span-1 md:col-span-2 flex items-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/50 text-on-secondary-container text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        Scheduled
+                    </span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="text-[1.375rem] font-mono font-medium text-on-surface">PK-2024-89A</span>
+</div>
+<div class="col-span-1 md:col-span-4">
+<p class="text-[0.875rem] text-on-surface-variant line-clamp-1">3x E-Waste Bins, 1x Secure Document Console</p>
+<p class="text-[0.6875rem] font-mono text-outline mt-1">Est. 450 kg</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-[0.875rem] font-medium text-on-surface">Oct 24, 2024</p>
+<p class="text-[0.6875rem] text-on-surface-variant mt-1">09:00 AM - 11:00 AM</p>
+</div>
+<div class="col-span-1 md:col-span-1 flex justify-end">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Completed -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow hover:bg-surface-container-low transition-colors duration-300 relative group cursor-pointer">
+<div class="col-span-1 md:col-span-2 flex items-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                        Completed
+                    </span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="text-[1.375rem] font-mono font-medium text-on-surface">PK-2024-42C</span>
+</div>
+<div class="col-span-1 md:col-span-4">
+<p class="text-[0.875rem] text-on-surface-variant line-clamp-1">12x Mixed Recyclables, 2x Organics</p>
+<p class="text-[0.6875rem] font-mono text-outline mt-1">Actual: 1,204 kg</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-[0.875rem] font-medium text-on-surface">Oct 10, 2024</p>
+<p class="text-[0.6875rem] text-on-surface-variant mt-1">14:30 PM</p>
+</div>
+<div class="col-span-1 md:col-span-1 flex justify-end">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 3: Cancelled -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center bg-surface p-6 rounded-[1.5rem] hover:bg-surface-container-low transition-colors duration-300 relative group cursor-pointer opacity-75">
+<div class="col-span-1 md:col-span-2 flex items-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container/50 text-error text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                        Cancelled
+                    </span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="text-[1.375rem] font-mono font-medium text-on-surface line-through decoration-outline">PK-2024-38B</span>
+</div>
+<div class="col-span-1 md:col-span-4">
+<p class="text-[0.875rem] text-on-surface-variant line-clamp-1">1x Secure Document Console</p>
+<p class="text-[0.6875rem] font-mono text-outline mt-1">User requested</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-[0.875rem] font-medium text-on-surface">Sep 28, 2024</p>
+<p class="text-[0.6875rem] text-on-surface-variant mt-1">-</p>
+</div>
+<div class="col-span-1 md:col-span-1 flex justify-end">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 4: Completed -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow hover:bg-surface-container-low transition-colors duration-300 relative group cursor-pointer">
+<div class="col-span-1 md:col-span-2 flex items-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                        Completed
+                    </span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="text-[1.375rem] font-mono font-medium text-on-surface">PK-2024-12F</span>
+</div>
+<div class="col-span-1 md:col-span-4">
+<p class="text-[0.875rem] text-on-surface-variant line-clamp-1">8x Mixed Recyclables</p>
+<p class="text-[0.6875rem] font-mono text-outline mt-1">Actual: 840 kg</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="text-[0.875rem] font-medium text-on-surface">Sep 15, 2024</p>
+<p class="text-[0.6875rem] text-on-surface-variant mt-1">08:15 AM</p>
+</div>
+<div class="col-span-1 md:col-span-1 flex justify-end">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

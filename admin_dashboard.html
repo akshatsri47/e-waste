@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operations Dashboard - Project Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined', sans-serif;
+            font-size: 24px;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .roboto-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#80d9a0",
+                      "primary": "#006036",
+                      "surface-container-low": "#f5f3f3",
+                      "surface-container": "#efeded",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#bec9be",
+                      "on-tertiary-fixed-variant": "#00522b",
+                      "on-primary-container": "#abffc6",
+                      "on-secondary-fixed": "#00210e",
+                      "tertiary": "#006033",
+                      "on-secondary-container": "#37704a",
+                      "surface-container-high": "#eae8e7",
+                      "on-tertiary-container": "#aaffc3",
+                      "tertiary-fixed-dim": "#5ede90",
+                      "primary-fixed": "#9bf6ba",
+                      "inverse-surface": "#303030",
+                      "primary-container": "#1a7a4a",
+                      "inverse-primary": "#80d9a0",
+                      "background": "#fbf9f8",
+                      "on-primary-fixed": "#00210f",
+                      "outline": "#6f7a70",
+                      "tertiary-container": "#007b44",
+                      "on-surface-variant": "#3f4941",
+                      "surface-tint": "#006d3f",
+                      "on-surface": "#1b1c1c",
+                      "surface-dim": "#dbd9d9",
+                      "secondary-fixed-dim": "#98d4a7",
+                      "on-primary-fixed-variant": "#00522e",
+                      "inverse-on-surface": "#f2f0f0",
+                      "surface-container-highest": "#e4e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#316944",
+                      "surface-bright": "#fbf9f8",
+                      "on-tertiary-fixed": "#00210e",
+                      "secondary-fixed": "#b3f1c2",
+                      "on-background": "#1b1c1c",
+                      "surface-variant": "#e4e2e2",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#b3f1c2",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#7cfbaa",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#16512e",
+                      "on-error-container": "#93000a",
+                      "surface": "#fbf9f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (JSON Configured) -->
+<nav class="w-[280px] h-screen fixed left-0 top-0 flex flex-col bg-[#f5f3f3]/70 backdrop-blur-[20px] shadow-none z-50">
+<div class="p-8 flex flex-col gap-4 h-full">
+<!-- Brand Area -->
+<div class="mb-8">
+<h1 class="font-bold text-xl text-[#1A7A4A] tracking-tighter">Project Evolve</h1>
+<p class="text-xs text-on-surface-variant">The Living Ledger</p>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 bg-[#1A7A4A] text-white rounded-full px-4 py-2 transition-all duration-300 font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                        Inventory
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+                        Vendors
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="work_history">work_history</span>
+                        Jobs
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+                        Transactions
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider smooth-spring-transitions hover:scale-[1.02] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                        Analytics
+                    </a>
+</li>
+</ul>
+<!-- Footer Links -->
+<ul class="flex flex-col gap-2 mt-auto border-t border-outline-variant/15 pt-4">
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-stone-600 px-4 py-2 hover:bg-stone-200/50 transition-colors rounded-full font-['Inter'] font-medium text-[0.875rem] uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-[280px] flex-grow w-full max-w-[1440px] mx-auto min-h-screen">
+<!-- TopAppBar (JSON Configured) -->
+<header class="w-full h-20 flex items-center px-8 sticky top-0 z-40 bg-[#f5f3f3] border-none shadow-none justify-between tactile-click-feedback">
+<h2 class="hidden font-['Inter'] font-semibold text-[1.75rem] text-[#1A7A4A]">Admin Console</h2>
+<nav class="flex gap-6">
+<a class="text-[#1A7A4A] font-bold border-b-2 border-[#1A7A4A] pb-1 font-['Inter']" href="#">Overview</a>
+<a class="text-stone-500 hover:text-stone-900 pb-1 font-['Inter']" href="#">Reports</a>
+<a class="text-stone-500 hover:text-stone-900 pb-1 font-['Inter']" href="#">Logs</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-stone-100/50 rounded-lg text-[#1A7A4A]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-stone-100/50 rounded-lg text-[#1A7A4A]">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="flex items-center gap-2 pl-4 border-l border-outline-variant/15">
+<img alt="Priya Sharma's profile picture" class="w-8 h-8 rounded-full" data-alt="Small circular profile picture of Priya Sharma with dark green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ4Mm0ym7qVUnrBoufck5LU8Rizo_9_VnJeBoXLd1Jd-xmVAshbNVo8MJJhatSgwqFcRWZjq9RBtRBZcC9n2IWg-C6gNISUArDZRtyXsIhNDqHBYbKqZ3a1FXCNUAhN9TmDlQpFTce0KLjTX2ca5HCspCphWI04FYlE-bKJzARx8UZj5wASqqns90R5wE94xwp199j0CIcnLkHWrVh5yy-tPFFTRKTvL08APUN8l7hwPhQaGgds_Yy8pkmWZHU3X3zJKK3rht8JTk"/>
+<span class="text-sm font-medium font-['Inter']">Priya Sharma</span>
+</div>
+</div>
+</header>
+<div class="p-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-[1.75rem] font-semibold text-on-surface font-['Inter'] mb-1">Operations Dashboard</h2>
+<p class="text-sm text-on-surface-variant font-['Inter']">Command center for logistics and assignments.</p>
+</div>
+</div>
+<!-- Alert Banner -->
+<div class="mb-8 p-4 bg-error-container text-on-error-container rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<span class="font-medium font-['Inter'] text-sm">3 pickups unassigned for more than 24 hours</span>
+</div>
+<!-- KPI Cards Row -->
+<div class="grid grid-cols-4 gap-6 mb-12">
+<!-- Card 1 -->
+<div class="bg-surface-container-highest rounded-xl p-6 relative overflow-hidden group hover:scale-[1.01] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold font-['Inter'] tracking-wider text-on-surface-variant uppercase">Today's Pickups</span>
+<div class="p-2 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+</div>
+<div class="text-[1.375rem] font-medium roboto-mono text-primary-container">12</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group hover:scale-[1.01] transition-transform border border-outline-variant/15">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold font-['Inter'] tracking-wider text-on-surface-variant uppercase">Pending Assignment</span>
+<div class="p-2 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div class="text-[1.375rem] font-medium roboto-mono text-on-surface">3</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group hover:scale-[1.01] transition-transform border border-outline-variant/15">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold font-['Inter'] tracking-wider text-on-surface-variant uppercase">Completed Today</span>
+<div class="p-2 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="text-[1.375rem] font-medium roboto-mono text-on-surface">7</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group hover:scale-[1.01] transition-transform border border-outline-variant/15">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold font-['Inter'] tracking-wider text-on-surface-variant uppercase">Flagged</span>
+<div class="p-2 bg-surface rounded-lg">
+<span class="material-symbols-outlined text-error" data-icon="flag">flag</span>
+</div>
+</div>
+<div class="text-[1.375rem] font-medium roboto-mono text-error">2</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 relative">
+<h3 class="text-lg font-semibold font-['Inter'] mb-6 text-on-surface">Pickup Requests</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-xs text-on-surface-variant font-bold uppercase tracking-wider font-['Inter']">
+<th class="pb-4 font-normal">Booking ID</th>
+<th class="pb-4 font-normal">User</th>
+<th class="pb-4 font-normal">Area</th>
+<th class="pb-4 font-normal">Items</th>
+<th class="pb-4 font-normal">Time Slot</th>
+<th class="pb-4 font-normal">Status</th>
+<th class="pb-4 font-normal">Assigned Vendor</th>
+<th class="pb-4 font-normal text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-sm font-['Inter'] divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors rounded-lg">
+<td class="py-4 pl-2"><span class="text-[0.6875rem] font-bold roboto-mono bg-surface-container py-1 px-2 rounded">EVL-20250722-0091</span></td>
+<td class="py-4 font-medium text-on-surface">Priya Sharma</td>
+<td class="py-4 text-on-surface-variant">Noida</td>
+<td class="py-4 text-on-surface-variant">2 Boxes, 1 Chair</td>
+<td class="py-4 text-on-surface-variant">09:00 - 11:00 AM</td>
+<td class="py-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md text-xs font-medium bg-tertiary-container/10 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Scheduled
+                                    </span>
+</td>
+<td class="py-4 text-on-surface-variant">Vendor A</td>
+<td class="py-4 text-right pr-2">
+<button class="text-primary hover:bg-surface-container p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors rounded-lg">
+<td class="py-4 pl-2"><span class="text-[0.6875rem] font-bold roboto-mono bg-surface-container py-1 px-2 rounded">EVL-20250722-0092</span></td>
+<td class="py-4 font-medium text-on-surface">Rahul Gupta</td>
+<td class="py-4 text-on-surface-variant">Gurgaon</td>
+<td class="py-4 text-on-surface-variant">E-Waste (10kg)</td>
+<td class="py-4 text-on-surface-variant">12:00 - 02:00 PM</td>
+<td class="py-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md text-xs font-medium bg-surface-container text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> Unassigned
+                                    </span>
+</td>
+<td class="py-4 text-on-surface-variant italic text-xs">Awaiting Assignment</td>
+<td class="py-4 text-right pr-2">
+<button class="text-primary hover:bg-surface-container p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors rounded-lg bg-surface-container-low/50">
+<td class="py-4 pl-2"><span class="text-[0.6875rem] font-bold roboto-mono bg-surface-container py-1 px-2 rounded">EVL-20250722-0093</span></td>
+<td class="py-4 font-medium text-on-surface">Sneha Patel</td>
+<td class="py-4 text-on-surface-variant">South Delhi</td>
+<td class="py-4 text-on-surface-variant">Paper Waste</td>
+<td class="py-4 text-on-surface-variant">03:00 - 05:00 PM</td>
+<td class="py-4">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md text-xs font-medium bg-error-container/50 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Flagged
+                                    </span>
+</td>
+<td class="py-4 text-on-surface-variant">Vendor C</td>
+<td class="py-4 text-right pr-2">
+<button class="text-primary hover:bg-surface-container p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

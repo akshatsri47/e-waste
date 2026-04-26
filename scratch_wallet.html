@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Token Wallet - Project Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-dim": "#dbd9d9",
+                        "surface-container": "#efeded",
+                        "surface-variant": "#e4e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "tertiary": "#006033",
+                        "inverse-primary": "#80d9a0",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#007b44",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "primary-fixed-dim": "#80d9a0",
+                        "on-primary-container": "#abffc6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#00210e",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "tertiary-fixed": "#7cfbaa",
+                        "primary-container": "#1a7a4a",
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9f8",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "surface-container-high": "#eae8e7",
+                        "secondary-fixed": "#b3f1c2",
+                        "primary": "#006036",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#37704a",
+                        "surface-tint": "#006d3f",
+                        "on-primary-fixed": "#00210f",
+                        "outline": "#6f7a70",
+                        "on-secondary-fixed": "#00210e",
+                        "primary-fixed": "#9bf6ba",
+                        "on-tertiary-container": "#aaffc3",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#3f4941",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f8",
+                        "secondary-container": "#b3f1c2",
+                        "secondary": "#316944",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bec9be"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-20 bg-[#fbf9f8]/80 dark:bg-[#1b1c1c]/80 backdrop-blur-md text-[#006036] dark:text-[#1a7a4a] font-['Inter'] text-[1.75rem] font-semibold headline-md flex items-center justify-between px-12 z-30 transition-opacity">
+<div class="hidden font-['Inter'] font-extrabold text-xl text-[#006036] dark:text-[#1a7a4a] mb-8">Project Evolve</div>
+<div class="flex items-center space-x-6 ml-auto">
+<span class="material-symbols-outlined cursor-pointer active:scale-98 hover:opacity-70 transition-opacity" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer active:scale-98 hover:opacity-70 transition-opacity" data-icon="eco">eco</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/15 cursor-pointer hover:opacity-70 transition-opacity active:scale-98">
+<img alt="Priya Sharma" class="w-full h-full object-cover" data-alt="Close up portrait of a young professional woman smiling warmly in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsy07dhhs6EelyIT8IxNbNht4AkQaM83C7qPhgzQ60Y7QA4w_-Zm-_w21GtwPDwU_q7JP5CS8yfdyms-VzSbQResiQxQxb7kGmlJ2BILrurWp7ofPJOe0Dg013hhm7T7dm5uqkoMZiMphJex4A0ASeVeb7c-hPuJIpKDD50wUdkvqY0U-Zm6QH1ub7smlVTVdbfQN_lJng3yXrkBxAK10BQ6VnoCtcHnRVujkRe0GrelFiSHyVtffOD2_VS9sD4n_52tY8S-MS2jk"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-[280px] h-screen fixed left-0 top-0 bg-[#f5f3f3]/70 dark:bg-[#1b1c1c]/70 backdrop-blur-[20px] text-[#006036] dark:text-[#1a7a4a] font-['Inter'] text-[0.875rem] font-medium tracking-tight flex flex-col justify-between py-10 px-6 z-40 transition-transform">
+<div>
+<div class="font-['Inter'] font-extrabold text-xl text-[#006036] dark:text-[#1a7a4a] mb-8">Project Evolve</div>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center space-x-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>Item Selection</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Schedule Pickup</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span>Confirmation</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 bg-[#006036] text-white rounded-full px-4 py-3 font-semibold shadow-sm scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Token Wallet</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="space-y-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl py-3 px-4 font-semibold text-sm hover:opacity-90 transition-opacity active:scale-95 shadow-[0_4px_14px_0_rgba(0,96,54,0.39)]">
+                Schedule New Pickup
+            </button>
+<ul class="space-y-2">
+<li>
+<a class="flex items-center space-x-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</li>
+</ul>
+<div class="flex items-center space-x-3 px-4 pt-4 border-t border-outline-variant/15">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+<img alt="Priya Sharma's Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young professional woman smiling warmly in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyJuqXCq63jN-fnRMWDnsbYq66GZb7Q1SOQK_zZCq-ZVs6WwsNI4TsLBn2dkK23wpUx3lCe5vUTS1L64EoAJv-QhrBdROsClpH1hYPxU8wx4jsFUZLRJwv4Vdf_aaZdqBDg5S6e_mLAWZdtELn-FUiSYJ3Wxv8ij9P9rWxWpMWzeUgC36l4ZklwIdCIiaFwTKHWNuIPlXVVR0TY-0v5gzN6UyJ9DL-dqu7cSpqnnXG6-SjHPFkQLrXIyxWXUftOg3XXmHKU-syL2A"/>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-semibold truncate text-on-surface">Priya Sharma</span>
+<span class="text-xs text-on-surface-variant truncate">Sustainability Advocate</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] mt-20 p-12 w-full max-w-[1400px] mx-auto">
+<!-- Header Section -->
+<div class="mb-12 flex justify-between items-end">
+<div>
+<h1 class="text-[1.75rem] font-semibold text-on-surface font-headline tracking-tight mb-2">Good Morning, Priya.</h1>
+<p class="text-on-surface-variant text-sm">Here is your current impact overview.</p>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8 mb-12">
+<!-- Prominent Balance Card (Spans 8 cols) -->
+<div class="col-span-12 lg:col-span-8 bg-gradient-to-br from-primary to-primary-container rounded-[1.5rem] p-8 relative overflow-hidden text-on-primary">
+<!-- Subtle decorative background element -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-black/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="text-xs font-semibold tracking-wider uppercase opacity-80 mb-2 block font-label">CURRENT BALANCE</span>
+<div class="flex items-baseline space-x-3">
+<span class="text-[3.5rem] font-bold font-mono leading-none tracking-tight">1,240.00</span>
+</div>
+<span class="text-sm font-medium mt-1 block opacity-90">EVOLVE TOKENS</span>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-xl p-3 flex flex-col items-end">
+<span class="text-xs opacity-80 uppercase tracking-wide font-semibold mb-1">LIFETIME EARNINGS</span>
+<span class="font-mono text-xl font-bold">4,850.50</span>
+</div>
+</div>
+<div class="flex items-center space-x-4 mt-auto">
+<div class="relative inline-block group">
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-xl font-semibold text-sm hover:bg-surface-container transition-colors disabled:opacity-50 flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem]" data-icon="redeem">redeem</span>
+<span>Redeem Tokens</span>
+</button>
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1.5 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
+                                Coming Soon
+                            </div>
+</div>
+<button class="border border-white/30 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-white/10 transition-colors flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem]" data-icon="history">history</span>
+<span>View Analytics</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Impact Summary Card (Spans 4 cols) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-[1.5rem] p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-semibold tracking-wider text-on-surface-variant uppercase mb-6 font-label">Impact Summary</h3>
+<div class="space-y-6">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="recycling">recycling</span>
+</div>
+<div>
+<div class="font-mono text-lg font-bold text-on-surface">142 kg</div>
+<div class="text-xs text-on-surface-variant">Waste Diverted</div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="co2">co2</span>
+</div>
+<div>
+<div class="font-mono text-lg font-bold text-on-surface">38.5 kg</div>
+<div class="text-xs text-on-surface-variant">CO2 Offset</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/15">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Global Rank</span>
+<span class="font-bold text-primary">Top 15%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction History Section -->
+<div>
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-semibold text-on-surface">Transaction History</h2>
+<!-- Filter Tabs -->
+<div class="flex space-x-2 bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-2 text-sm font-medium rounded-lg bg-surface-container-lowest text-on-surface shadow-[0_2px_8px_rgba(27,28,28,0.06)] transition-all">All</button>
+<button class="px-4 py-2 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all">Earned</button>
+<button class="px-4 py-2 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all">Pending</button>
+</div>
+</div>
+<!-- Data Table (No structural borders, using tonal shifts) -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden shadow-[0_4px_24px_-8px_rgba(27,28,28,0.06)]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-xs uppercase tracking-wider font-semibold">
+<th class="py-4 px-6 font-medium">Date</th>
+<th class="py-4 px-6 font-medium">Booking ID</th>
+<th class="py-4 px-6 font-medium">Items</th>
+<th class="py-4 px-6 font-medium text-right">Amount</th>
+<th class="py-4 px-6 font-medium">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-5 px-6 text-on-surface">Oct 24, 2023</td>
+<td class="py-5 px-6 font-mono text-xs font-bold text-on-surface-variant">#BK-84729</td>
+<td class="py-5 px-6">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem] text-primary" data-icon="devices">devices</span>
+<span class="text-on-surface">E-Waste Collection</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right font-mono font-bold text-primary">+150.00</td>
+<td class="py-5 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-container/10 text-primary-container">
+                                    Completed
+                                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group bg-surface-container-low/20">
+<td class="py-5 px-6 text-on-surface">Oct 21, 2023</td>
+<td class="py-5 px-6 font-mono text-xs font-bold text-on-surface-variant">#BK-84610</td>
+<td class="py-5 px-6">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem] text-on-surface-variant" data-icon="checkroom">checkroom</span>
+<span class="text-on-surface">Textile Recycling</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right font-mono font-bold text-on-surface-variant opacity-70">+45.00</td>
+<td class="py-5 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-surface-variant text-on-surface-variant">
+                                    Pending
+                                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-5 px-6 text-on-surface">Oct 15, 2023</td>
+<td class="py-5 px-6 font-mono text-xs font-bold text-on-surface-variant">#RD-11029</td>
+<td class="py-5 px-6">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem] text-error" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-on-surface">Partner Discount Redeemed</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right font-mono font-bold text-error">-500.00</td>
+<td class="py-5 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-container/10 text-primary-container">
+                                    Completed
+                                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group bg-surface-container-low/20">
+<td class="py-5 px-6 text-on-surface">Oct 02, 2023</td>
+<td class="py-5 px-6 font-mono text-xs font-bold text-on-surface-variant">#BK-83901</td>
+<td class="py-5 px-6">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[1.25rem] text-primary" data-icon="battery_charging_full">battery_charging_full</span>
+<span class="text-on-surface">Battery Disposal</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right font-mono font-bold text-primary">+80.00</td>
+<td class="py-5 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-container/10 text-primary-container">
+                                    Completed
+                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</body></html>

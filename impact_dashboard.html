@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impact Dashboard - Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae8e7",
+                        "primary-fixed-dim": "#80d9a0",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-fixed": "#00210e",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "secondary": "#316944",
+                        "on-secondary-container": "#37704a",
+                        "on-surface-variant": "#3f4941",
+                        "primary": "#006036",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error": "#ba1a1a",
+                        "tertiary": "#006033",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed-variant": "#00522e",
+                        "on-primary-fixed": "#00210f",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e4e2e2",
+                        "surface": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e2",
+                        "primary-container": "#1a7a4a",
+                        "inverse-primary": "#80d9a0",
+                        "on-secondary-fixed": "#00210e",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#006d3f",
+                        "secondary-fixed": "#b3f1c2",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-container": "#007b44",
+                        "on-background": "#1b1c1c",
+                        "secondary-container": "#b3f1c2",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "outline": "#6f7a70",
+                        "outline-variant": "#bec9be",
+                        "on-primary-container": "#abffc6",
+                        "inverse-surface": "#303030",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#7cfbaa",
+                        "on-tertiary-container": "#aaffc3",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbd9d9",
+                        "primary-fixed": "#9bf6ba"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Roboto Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+        }
+        .glass-panel {
+            background-color: rgba(245, 243, 243, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="glass-panel fixed left-0 top-0 h-full flex flex-col py-8 z-40 w-[280px]">
+<!-- Brand / Header Slot -->
+<div class="px-8 mb-12 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant/15">
+<img alt="Priya Sharma" class="w-full h-full object-cover" data-alt="Portrait of Priya Sharma smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFQeaPoYu3GhVyeaLddmV-7u7CXvM1ngtHNwOwN35kCR5-FyQGejjpoU_bUCSNx6qsEXosABefxyaOdoxCiKNLf6Ozj9V-k-QXI9mtuCBd8RnUhu82N-XRTw3xDMIkmbXdpgNlGSdIFyYlHHhclVY7SOtLZ9r0MhqAxsuk15aM26wZM5Qp8EFhhYESrFktA2qkZwFhSVlnDecX-EklE9kKW6bySU6jsul9pjyRGN3rLaw4XpqDQyZbAYGKv0LleMNH1EbN5vO0dr0"/>
+</div>
+<div>
+<h2 class="font-headline font-semibold text-on-surface text-sm">Priya Sharma</h2>
+<p class="font-mono text-xs text-primary font-medium">1,240 Tokens</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2 flex-grow px-4">
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-headline font-medium text-sm">Dashboard</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-headline font-medium text-sm">Token Ledger</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-headline font-medium text-sm">Pickups</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-headline font-medium text-sm">Vendors</span>
+</a>
+<!-- Active State Navigation -->
+<a class="bg-[#1A7A4A] text-white rounded-full px-4 py-3 mx-2 flex items-center gap-4 shadow-sm hover:translate-x-1 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined fill" data-icon="monitoring">monitoring</span>
+<span class="font-headline font-medium text-sm">Analytics</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline font-medium text-sm">Settings</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="px-6 mt-8 mb-8">
+<button class="w-full gradient-primary text-on-primary rounded-xl py-3 px-4 font-headline font-semibold text-sm shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Request
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-col gap-1 px-4 border-t border-outline-variant/15 pt-6 mt-auto">
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+<span class="font-headline font-medium text-sm">Help Center</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 flex items-center gap-4 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span class="font-headline font-medium text-sm">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] flex-1 p-12 max-w-[1200px]">
+<!-- Header -->
+<header class="mb-12 flex justify-between items-end">
+<div>
+<p class="font-mono text-sm text-primary mb-2 font-medium tracking-wide">IMPACT DASHBOARD</p>
+<h1 class="font-headline text-[1.75rem] font-semibold text-on-surface leading-tight tracking-tight">Your Environmental Contribution</h1>
+</div>
+<!-- Secondary action or date picker could go here, omitting for layout simplicity based on prompt -->
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Hero Impact Card (Large span) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[24px] p-10 flex flex-col justify-center relative overflow-hidden group">
+<!-- Subtle decorative background element -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl group-hover:bg-primary-container/10 transition-colors duration-700 pointer-events-none"></div>
+<div class="relative z-10">
+<p class="font-headline text-sm font-medium text-on-surface-variant mb-6 uppercase tracking-widest">Total Carbon Reduction</p>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="font-mono text-[3.5rem] font-bold text-primary leading-none tracking-tighter">18.4</span>
+<span class="font-headline text-[1.375rem] font-medium text-on-surface-variant">kg CO2 saved</span>
+</div>
+<!-- Callout badge -->
+<div class="inline-flex items-center gap-3 bg-surface-container-low px-5 py-3 rounded-xl">
+<span class="text-xl">🌳</span>
+<span class="font-headline text-sm font-medium text-on-surface">That's like planting 2 trees</span>
+</div>
+</div>
+</div>
+<!-- Visualization: Donut Chart placeholder (Items Recycled) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-[24px] p-8 flex flex-col">
+<h3 class="font-headline text-base font-semibold text-on-surface mb-6">Items Recycled</h3>
+<!-- Pseudo-Donut Chart using Flex/CSS -->
+<div class="flex-1 flex flex-col items-center justify-center relative my-4">
+<!-- Donut Graphic (CSS representation) -->
+<div class="w-40 h-40 rounded-full border-[16px] border-surface-container-highest relative flex items-center justify-center">
+<!-- Segments (Simulated via SVG for better rendering, or CSS conic-gradient if preferred. Using a simple layered approach here for pure HTML/CSS without inline SVG complexity) -->
+<div class="absolute inset-0 rounded-full" style="background: conic-gradient(theme('colors.primary') 0% 45%, theme('colors.secondary-container') 45% 75%, theme('colors.tertiary-fixed-dim') 75% 100%); mask: radial-gradient(transparent 55%, black 55%); -webkit-mask: radial-gradient(transparent 55%, black 55%);"></div>
+<div class="z-10 flex flex-col items-center">
+<span class="font-mono text-xl font-bold text-on-surface">32</span>
+<span class="font-headline text-xs text-on-surface-variant">Total</span>
+</div>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-auto space-y-3">
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-headline text-on-surface-variant">Smartphones</span>
+</div>
+<span class="font-mono font-medium">14</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span class="font-headline text-on-surface-variant">Laptops</span>
+</div>
+<span class="font-mono font-medium">10</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-headline text-on-surface-variant">Cables</span>
+</div>
+<span class="font-mono font-medium">8</span>
+</div>
+</div>
+</div>
+<!-- Progress: Bar Chart (CO2 Saved Last 6 Months) -->
+<div class="col-span-12 bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_16px_32px_-12px_rgba(27,28,28,0.06)] relative z-10">
+<div class="flex justify-between items-end mb-8">
+<h3 class="font-headline text-base font-semibold text-on-surface">CO2 Saved (Last 6 Months)</h3>
+<span class="font-mono text-xs text-on-surface-variant">Value in kg</span>
+</div>
+<!-- Bar Chart CSS Layout -->
+<div class="h-48 flex items-end gap-4 sm:gap-8 justify-between pt-4 pb-2 border-b border-outline-variant/15">
+<!-- Month 1 -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary-container/20 group-hover:bg-primary-container/40 transition-colors rounded-t-lg" style="height: 30%"></div>
+</div>
+<span class="font-mono text-xs text-on-surface-variant">Jan</span>
+</div>
+<!-- Month 2 -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary-container/40 group-hover:bg-primary-container/60 transition-colors rounded-t-lg" style="height: 45%"></div>
+</div>
+<span class="font-mono text-xs text-on-surface-variant">Feb</span>
+</div>
+<!-- Month 3 -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary-container/30 group-hover:bg-primary-container/50 transition-colors rounded-t-lg" style="height: 35%"></div>
+</div>
+<span class="font-mono text-xs text-on-surface-variant">Mar</span>
+</div>
+<!-- Month 4 -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary-container/60 group-hover:bg-primary-container/80 transition-colors rounded-t-lg" style="height: 60%"></div>
+</div>
+<span class="font-mono text-xs text-on-surface-variant">Apr</span>
+</div>
+<!-- Month 5 -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary-container/80 group-hover:bg-primary-container transition-colors rounded-t-lg" style="height: 85%"></div>
+</div>
+<span class="font-mono text-xs text-on-surface-variant">May</span>
+</div>
+<!-- Month 6 (Current) -->
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-surface-container-high rounded-t-lg relative flex items-end h-[100%] overflow-hidden">
+<div class="w-full bg-primary group-hover:bg-tertiary transition-colors rounded-t-lg" style="height: 100%"></div>
+</div>
+<span class="font-mono text-xs font-bold text-primary">Jun</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

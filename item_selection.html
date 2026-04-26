@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Selection - Project Evolve</title>
+<!-- Google Fonts: Inter & Roboto Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#f2f0f0",
+                      "surface-dim": "#dbd9d9",
+                      "surface-container": "#efeded",
+                      "surface-variant": "#e4e2e2",
+                      "surface-bright": "#fbf9f8",
+                      "surface-container-highest": "#e4e2e2",
+                      "on-surface": "#1b1c1c",
+                      "on-background": "#1b1c1c",
+                      "tertiary": "#006033",
+                      "inverse-primary": "#80d9a0",
+                      "on-secondary-fixed-variant": "#16512e",
+                      "inverse-surface": "#303030",
+                      "on-primary-fixed-variant": "#00522e",
+                      "tertiary-container": "#007b44",
+                      "secondary-fixed-dim": "#98d4a7",
+                      "primary-fixed-dim": "#80d9a0",
+                      "on-primary-container": "#abffc6",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#00210e",
+                      "on-tertiary-fixed-variant": "#00522b",
+                      "tertiary-fixed": "#7cfbaa",
+                      "primary-container": "#1a7a4a",
+                      "error-container": "#ffdad6",
+                      "surface": "#fbf9f8",
+                      "surface-container-low": "#f5f3f3",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#5ede90",
+                      "surface-container-high": "#eae8e7",
+                      "secondary-fixed": "#b3f1c2",
+                      "primary": "#006036",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#37704a",
+                      "surface-tint": "#006d3f",
+                      "on-primary-fixed": "#00210f",
+                      "outline": "#6f7a70",
+                      "on-secondary-fixed": "#00210e",
+                      "primary-fixed": "#9bf6ba",
+                      "on-tertiary-container": "#aaffc3",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#3f4941",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "background": "#fbf9f8",
+                      "secondary-container": "#b3f1c2",
+                      "secondary": "#316944",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#bec9be"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ],
+                      "mono": [
+                              "Roboto Mono"
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: SideNavBar -->
+<nav class="bg-[#f5f3f3]/70 dark:bg-[#1b1c1c]/70 backdrop-blur-[20px] w-[280px] h-screen fixed left-0 top-0 flex flex-col justify-between py-10 px-6 z-40">
+<!-- Brand & Top Actions -->
+<div>
+<div class="font-['Inter'] font-extrabold text-xl text-[#006036] dark:text-[#1a7a4a] mb-8 px-4">Project Evolve</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl px-4 py-3 font-semibold mb-8 hover:opacity-90 transition-opacity shadow-[0_8px_16px_rgba(0,96,54,0.15)] flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                Schedule New Pickup
+            </button>
+<!-- Navigation Tabs -->
+<ul class="space-y-2 font-['Inter'] text-[0.875rem] font-medium tracking-tight">
+<!-- Active Tab: Item Selection -->
+<li>
+<a class="bg-[#006036] text-white rounded-full px-4 py-3 font-semibold shadow-sm flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="category" style="font-variation-settings: 'FILL' 1;">category</span>
+                        Item Selection
+                    </a>
+</li>
+<!-- Inactive Tabs -->
+<li>
+<a class="text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+                        Schedule Pickup
+                    </a>
+</li>
+<li>
+<a class="text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+                        Confirmation
+                    </a>
+</li>
+<li>
+<a class="text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-3 transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+                        Token Wallet
+                    </a>
+</li>
+</ul>
+</div>
+<!-- Footer Profile -->
+<div class="space-y-2 border-t border-outline-variant/10 pt-6">
+<ul class="space-y-1 font-['Inter'] text-[0.875rem] font-medium tracking-tight mb-4">
+<li>
+<a class="text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-2 transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                        Settings
+                    </a>
+</li>
+<li>
+<a class="text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#e4e2e2] dark:hover:bg-[#2c2d2d] rounded-full px-4 py-2 transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+                        Support
+                    </a>
+</li>
+</ul>
+<div class="flex items-center gap-3 px-4 py-2 hover:bg-[#e4e2e2] rounded-xl transition-colors cursor-pointer">
+<img alt="Priya Sharma's Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="close up headshot portrait of young professional woman with warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTSDEqXqOphfEJXhkp3grU-5JKoLqgtWBs1mqb-xZ_sF5s4Ge5t8zoCIXnGxiYfrH6kmFUjAtwPcdjMUAPASmqidphtUaPcIfQmh0QJa7es6tiuhOJkkTS9y-ONKjQgq_6Hwns3AEG9uDTMDd6Z6IjKW73mv5-Fc83ykToTIqHrwpAjnaod9L48_geC_ZrX_zotmH8ydBTffVmEueO8cqaYR55Hv_atrZZ2V-n6nT_AltmPOyegX9I7KPPbgcKn2hDURb9vjyHZOw"/>
+<div>
+<div class="font-['Inter'] text-[0.875rem] font-bold text-on-surface">Priya Sharma</div>
+<div class="font-['Inter'] text-[0.75rem] text-on-surface-variant">Sustainability Advocate</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper (Accounts for Sidebar) -->
+<main class="ml-[280px] w-[calc(100%-280px)] min-h-screen bg-surface flex flex-col relative">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-[#fbf9f8]/80 dark:bg-[#1b1c1c]/80 backdrop-blur-md fixed top-0 right-0 w-[calc(100%-280px)] h-20 flex items-center justify-between px-12 z-30">
+<div class="font-['Inter'] text-[1.75rem] font-semibold text-[#006036] dark:text-[#1a7a4a]">Item Selection</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary w-64 transition-all placeholder:text-outline" placeholder="Search categories..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-[#1b1c1c] dark:text-[#fbf9f8] hover:opacity-70 transition-opacity cursor-pointer active:scale-98">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-[#1b1c1c] dark:text-[#fbf9f8] hover:opacity-70 transition-opacity cursor-pointer active:scale-98">
+<span class="material-symbols-outlined text-[22px]" data-icon="eco">eco</span>
+</button>
+</div>
+<img alt="Priya Sharma" class="w-10 h-10 rounded-full object-cover cursor-pointer hover:opacity-80 transition-opacity" data-alt="close up headshot portrait of young professional woman with warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpzZ98x0hTXMxXDgptx5ngL0zsnUr_rXn0q12jwJL5_l0Y9rbt0gK50zhaRSDmQjDJWaxefawHaTnBqUEddz0gw9odbayQAcIXVJNrMZ86w7zzn6bWPWBn2eXVy-S19FzB3Q29ZYNYd1UtwAbzIYahLlCQwaYDyVFj6yUtwGR69C-Sw45dAxPOhfGV9FE9FvwpFTs3qWP2cZUiFDX0RPHv4jyNHwWtDoidhj6jPdnvj5MG3-pInmqIl1axrPlyAaGr9u7Mxa8Vms"/>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="flex-1 pt-28 pb-12 px-12 flex gap-12 max-w-[1600px] mx-auto w-full">
+<!-- Left Column: Item Grid -->
+<div class="flex-1">
+<div class="mb-8">
+<h2 class="font-['Inter'] text-xl font-medium text-on-surface">What are you recycling today?</h2>
+<p class="font-['Inter'] text-sm text-on-surface-variant mt-1">Select the quantity of each electronic device category you wish to schedule for pickup.</p>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- Selected Card: Laptops -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex items-center justify-between ring-2 ring-primary shadow-[0_16px_32px_rgba(27,28,28,0.06)] transition-all">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+</div>
+<span class="font-['Inter'] font-semibold text-on-surface text-lg">Laptops</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-bold text-primary text-xl w-6 text-center">2</span>
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<!-- Selected Card: Smartphones -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex items-center justify-between ring-2 ring-primary shadow-[0_16px_32px_rgba(27,28,28,0.06)] transition-all">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+</div>
+<span class="font-['Inter'] font-semibold text-on-surface text-lg">Smartphones</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-bold text-primary text-xl w-6 text-center">3</span>
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<!-- Unselected Card: Desktops -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-[#efeded] transition-colors cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">desktop_windows</span>
+</div>
+<span class="font-['Inter'] font-medium text-on-surface text-lg">Desktops</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center opacity-50 cursor-not-allowed"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-medium text-on-surface-variant text-xl w-6 text-center">0</span>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<!-- Unselected Card: Printers -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-[#efeded] transition-colors cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">print</span>
+</div>
+<span class="font-['Inter'] font-medium text-on-surface text-lg">Printers</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center opacity-50 cursor-not-allowed"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-medium text-on-surface-variant text-xl w-6 text-center">0</span>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<!-- Unselected Card: Monitors -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-[#efeded] transition-colors cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">monitor</span>
+</div>
+<span class="font-['Inter'] font-medium text-on-surface text-lg">Monitors</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center opacity-50 cursor-not-allowed"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-medium text-on-surface-variant text-xl w-6 text-center">0</span>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+<!-- Unselected Card: Tablets -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-[#efeded] transition-colors cursor-pointer group">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tablet_mac</span>
+</div>
+<span class="font-['Inter'] font-medium text-on-surface text-lg">Tablets</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center opacity-50 cursor-not-allowed"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-mono font-medium text-on-surface-variant text-xl w-6 text-center">0</span>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 text-outline flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Order Summary -->
+<div class="w-[360px] flex-shrink-0">
+<div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-[0_32px_64px_rgba(27,28,28,0.04)] sticky top-28">
+<h3 class="font-['Inter'] text-lg font-semibold text-on-surface mb-6">Order Summary</h3>
+<div class="flex justify-between items-center mb-6 pb-6 border-b border-surface-container-highest">
+<span class="font-['Inter'] text-sm text-on-surface-variant">Selected Items</span>
+<span class="font-mono font-medium text-lg text-on-surface">5</span>
+</div>
+<div class="space-y-6 mb-8">
+<div>
+<div class="font-['Inter'] text-[0.6875rem] font-bold text-on-surface-variant tracking-widest uppercase mb-1">Estimated Tokens</div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-4xl font-medium text-primary">~220</span>
+<span class="font-['Inter'] text-sm text-primary font-medium">EVLV</span>
+</div>
+</div>
+<div>
+<div class="font-['Inter'] text-[0.6875rem] font-bold text-on-surface-variant tracking-widest uppercase mb-1">CO2 Impact</div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-3xl font-medium text-tertiary-container">3.8</span>
+<span class="font-['Inter'] text-sm text-tertiary-container font-medium">kg saved</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl py-4 font-semibold text-base hover:shadow-[0_8px_16px_rgba(0,96,54,0.2)] hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2">
+                        Review &amp; Schedule
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

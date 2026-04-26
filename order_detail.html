@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Detail - Project Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae8e7",
+                        "on-primary-container": "#abffc6",
+                        "on-surface-variant": "#3f4941",
+                        "on-tertiary-fixed-variant": "#00522b",
+                        "tertiary-fixed-dim": "#5ede90",
+                        "on-primary-fixed-variant": "#00522e",
+                        "surface": "#fbf9f8",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#6f7a70",
+                        "inverse-surface": "#303030",
+                        "surface-variant": "#e4e2e2",
+                        "on-tertiary-fixed": "#00210e",
+                        "primary-fixed": "#9bf6ba",
+                        "on-background": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#80d9a0",
+                        "surface-tint": "#006d3f",
+                        "on-secondary-container": "#37704a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#16512e",
+                        "secondary-container": "#b3f1c2",
+                        "tertiary-fixed": "#7cfbaa",
+                        "surface-bright": "#fbf9f8",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-tertiary-container": "#aaffc3",
+                        "secondary-fixed": "#b3f1c2",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1a7a4a",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-fixed-dim": "#98d4a7",
+                        "background": "#fbf9f8",
+                        "primary": "#006036",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#80d9a0",
+                        "secondary": "#316944",
+                        "tertiary-container": "#007b44",
+                        "surface-dim": "#dbd9d9",
+                        "tertiary": "#006033",
+                        "outline-variant": "#bec9be",
+                        "on-primary-fixed": "#00210f",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed": "#00210e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary selection:text-on-primary">
+<div class="flex min-h-screen max-w-[1440px] mx-auto">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col py-8 px-4 gap-2 bg-stone-100/70 dark:bg-stone-900/70 backdrop-blur-xl w-[280px] h-screen sticky top-0 left-0 bg-stone-200/50 dark:bg-stone-800/50 no-border tonal-stacking shadow-[32px_0_32px_-16px_rgba(27,28,28,0.06)] z-40">
+<div class="mb-12 px-4 flex items-center gap-3 text-emerald-900 dark:text-emerald-50 text-xl font-bold tracking-tighter">
+<span class="material-symbols-outlined text-3xl" data-icon="eco">eco</span>
+<div class="flex flex-col">
+<span class="leading-none">Project Evolve</span>
+<span class="text-[10px] font-medium tracking-wide opacity-70">The Living Ledger</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 bg-emerald-200 dark:bg-emerald-800 text-emerald-950 dark:text-emerald-50 rounded-full px-4 py-2 font-semibold font-sans text-sm tracking-tight scale-[0.99] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 px-4 py-2 hover:text-emerald-800 dark:hover:text-emerald-200 rounded-full font-sans text-sm font-medium tracking-tight hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-all duration-300 scale-[0.99] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span>ESG Reporting</span>
+</a>
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 px-4 py-2 hover:text-emerald-800 dark:hover:text-emerald-200 rounded-full font-sans text-sm font-medium tracking-tight hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-all duration-300 scale-[0.99] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span>Project Evolve</span>
+</a>
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 px-4 py-2 hover:text-emerald-800 dark:hover:text-emerald-200 rounded-full font-sans text-sm font-medium tracking-tight hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-all duration-300 scale-[0.99] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Data Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 px-4 py-2 hover:text-emerald-800 dark:hover:text-emerald-200 rounded-full font-sans text-sm font-medium tracking-tight hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-all duration-300 scale-[0.99] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Corporate Settings</span>
+</a>
+</div>
+<div class="mt-auto px-4 pb-4">
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-medium text-sm flex items-center justify-center gap-2 hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+                    Export Report
+                </button>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-low/50">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_circle">account_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Priya Sharma</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-h-screen overflow-x-hidden pt-8 px-6 lg:px-12 pb-24">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<a class="inline-flex items-center gap-2 text-sm text-outline hover:text-primary transition-colors mb-4 group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+                        Back to Pickups
+                    </a>
+<h1 class="font-headline text-[1.75rem] font-semibold tracking-tight text-on-surface flex items-center gap-4">
+                        Pickup Detail
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider">Completed</span>
+</h1>
+<p class="font-mono text-label-sm text-outline mt-2 tracking-widest uppercase">ID: EVL-20250708-0054</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg bg-surface-container-low text-primary font-medium text-sm hover:bg-surface-container-high transition-colors flex items-center gap-2 border border-outline-variant/15">
+<span class="material-symbols-outlined text-[18px]" data-icon="receipt_long">receipt_long</span>
+                        Download Receipt
+                    </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column (Span 8) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Reward Card (Prominent) -->
+<section class="bg-gradient-to-br from-primary to-primary-container rounded-xl p-8 text-on-primary relative overflow-hidden shadow-sm">
+<!-- Decorative bg -->
+<div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-white opacity-5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h2 class="font-headline text-sm font-medium opacity-80 uppercase tracking-widest mb-1">Impact Reward</h2>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-[2.5rem] font-bold leading-none text-tertiary-fixed">150.00</span>
+<span class="font-headline text-lg font-medium opacity-90">Tokens Earned</span>
+</div>
+<p class="text-sm opacity-80 mt-2 max-w-md">Tokens credited to corporate ledger for responsible e-waste disposal.</p>
+</div>
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md shrink-0">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed" data-icon="paid" data-weight="fill">paid</span>
+</div>
+</div>
+</section>
+<!-- Vendor & Logistics Info -->
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/15">
+<h3 class="font-headline text-lg font-medium mb-6">Logistics Overview</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Vendor -->
+<div>
+<p class="text-xs font-bold font-mono text-outline uppercase tracking-widest mb-2">Service Partner</p>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-medium text-on-surface">GreenCycle Delhi</p>
+<p class="text-sm text-outline mt-1">Certified E-Waste Handler (Tier 1)</p>
+<p class="text-xs font-mono text-outline mt-1">Lic: GDL-992-B</p>
+</div>
+</div>
+</div>
+<!-- Schedule -->
+<div>
+<p class="text-xs font-bold font-mono text-outline uppercase tracking-widest mb-2">Completion Time</p>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+</div>
+<div>
+<p class="font-medium text-on-surface">July 8, 2025</p>
+<p class="text-sm text-outline mt-1">10:45 AM (IST)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Items Checklist -->
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/15">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-lg font-medium">Manifested Items</h3>
+<span class="font-mono text-xs bg-surface text-on-surface px-2 py-1 rounded-md border border-outline-variant/15">3 Items Total</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<p class="font-medium text-on-surface">Corporate Smartphones</p>
+<p class="text-sm text-outline">Condition: End of Life / Non-functional</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono font-bold text-on-surface">2x</p>
+<p class="text-xs font-mono text-primary mt-1">+50 Tokens</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="desktop_windows">desktop_windows</span>
+</div>
+<div>
+<p class="font-medium text-on-surface">LCD Monitor (24")</p>
+<p class="text-sm text-outline">Condition: Obsolete / Operational</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-mono font-bold text-on-surface">1x</p>
+<p class="text-xs font-mono text-primary mt-1">+100 Tokens</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Span 4) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Map/Location Card -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/15 overflow-hidden flex flex-col h-full">
+<div class="h-48 relative bg-surface-dim">
+<img alt="Map view of New Delhi tech park with pin" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="minimalist stylized digital map of a modern tech park area in subtle green and beige tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4ALnYD-kjWurS4fs8xR4HmHs8qNVa78rA_sR4edRmckUmIoKHWWNggyQD_Web8eBAylUpbedvZ9sbrxCOdn3C_aCS5rhBVQgVILY5Sb6qnJrjGGMoP0cdhxn80gR6QPx2WbsCC0_Pm55bpFh3Zwt8GKL-76qNAO0hDZLrhbhlwVfoVUJ7w3Hv35NEZBbAWv5v1jFb2CDYmZ3od40A_D1LxfvfhJBeJPz5Nagyt3p9wKVPZmzsuM5Me0xfDZGlwjhtvUwcPGdjQJc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-4 left-6 flex items-center gap-2 bg-surface/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="location_on" data-weight="fill">location_on</span>
+<span class="text-xs font-medium">Pickup Location</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline text-sm font-medium mb-4">Origin Address</h3>
+<div class="mb-6">
+<p class="font-medium text-on-surface mb-1">Project Evolve HQ</p>
+<p class="text-sm text-outline leading-relaxed">
+                                    Tower C, Level 4, DLF Cyber City<br/>
+                                    Gurugram, Haryana 122002<br/>
+                                    India
+                                </p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/15">
+<p class="text-xs font-bold font-mono text-outline uppercase tracking-widest mb-3">Impact Metrics</p>
+<div class="flex justify-between items-center bg-surface p-3 rounded-lg border border-outline-variant/10">
+<span class="text-sm text-on-surface-variant">Carbon Offset</span>
+<span class="font-mono text-sm font-bold text-primary">4.2 kg CO₂e</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

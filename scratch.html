@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Project Evolve</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e7",
+                    "primary-fixed-dim": "#80d9a0",
+                    "surface-bright": "#fbf9f8",
+                    "on-tertiary-fixed": "#00210e",
+                    "secondary-fixed-dim": "#98d4a7",
+                    "secondary": "#316944",
+                    "on-secondary-container": "#37704a",
+                    "on-surface-variant": "#3f4941",
+                    "primary": "#006036",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error": "#ba1a1a",
+                    "tertiary": "#006033",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#efeded",
+                    "tertiary-fixed-dim": "#5ede90",
+                    "background": "#fbf9f8",
+                    "on-primary-fixed-variant": "#00522e",
+                    "on-primary-fixed": "#00210f",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e4e2e2",
+                    "surface": "#fbf9f8",
+                    "surface-container-highest": "#e4e2e2",
+                    "primary-container": "#1a7a4a",
+                    "inverse-primary": "#80d9a0",
+                    "on-secondary-fixed": "#00210e",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#006d3f",
+                    "secondary-fixed": "#b3f1c2",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "tertiary-container": "#007b44",
+                    "on-background": "#1b1c1c",
+                    "secondary-container": "#b3f1c2",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary-fixed-variant": "#16512e",
+                    "outline": "#6f7a70",
+                    "outline-variant": "#bec9be",
+                    "on-primary-container": "#abffc6",
+                    "inverse-surface": "#303030",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#7cfbaa",
+                    "on-tertiary-container": "#aaffc3",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dbd9d9",
+                    "primary-fixed": "#9bf6ba"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "mono": ["Roboto Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fbf9f8; color: #1b1c1c; }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        .bg-gradient-primary { background: linear-gradient(135deg, #006036 0%, #1a7a4a 100%); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full flex-col py-8 z-40 docked left-0 h-screen w-[280px] bg-[#f5f3f3]/70 dark:bg-slate-900/70 backdrop-blur-md tonal-stacking-no-lines flat no-shadows border-r border-outline-variant/15">
+<div class="px-6 mb-8 hidden">
+<!-- Brand Logo hidden per JSON style_brand_logo: "hidden" -->
+<span class="font-bold text-2xl text-primary tracking-tighter">Evolve</span>
+</div>
+<div class="px-6 mb-8 w-full">
+<button class="w-full py-3 px-4 rounded-xl bg-gradient-primary text-on-primary font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Request
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto px-4 space-y-2">
+<a class="flex items-center gap-4 bg-[#1A7A4A] text-white rounded-full px-4 py-3 mx-2 hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-headline font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-headline font-medium text-sm">Token Ledger</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-headline font-medium text-sm">Pickups</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-headline font-medium text-sm">Vendors</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-headline font-medium text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-headline font-medium text-sm">Settings</span>
+</a>
+</div>
+<div class="px-4 mt-auto space-y-2 mb-6">
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-headline font-medium text-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-4 text-slate-600 dark:text-slate-400 px-4 py-3 mx-2 hover:bg-[#e4e2e2] dark:hover:bg-slate-800 rounded-full transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-headline font-medium text-sm">Sign Out</span>
+</a>
+</div>
+<div class="px-6 pt-4 border-t border-outline-variant/15 flex items-center gap-3">
+<img alt="Priya Sharma" class="w-8 h-8 rounded-full object-cover" data-alt="professional portrait of young woman with dark hair smiling warmly, soft lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq13k0RYsj9_hJwcGUM7xY8YdHQ5q7MmpcSPWw4HWWHRPKgvwDL69tTDgcv-9MewD0LH-XAMPUla1sNL6AwY52pNb8DUDZqPwqmHpYIZLEFAXGOBXcoVIAWhL37PFwFmxLGvXEZ6_OPhT2a2ZB1VG9XVTSR6ZFHMf7SAK3kQgcUxrcL-D3ZKfMoAsfEqqFAqbAobq7uSniWzJKEZdkWfwwLm9Rzgd0H64Qw6FHrwkcTlbFzbh6BQUVU60ZzSyqqd861FBQFCWcPgk"/>
+<div>
+<p class="font-headline font-medium text-sm text-on-surface">Priya Sharma</p>
+<p class="font-mono text-xs text-on-surface-variant">1,240 Tokens</p>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[280px] p-8 max-w-[1160px]">
+<!-- Top Bar -->
+<header class="flex justify-between items-center mb-12">
+<div>
+<h1 class="font-headline text-[1.75rem] font-semibold text-on-surface leading-tight tracking-tight">Good morning, Priya <span class="inline-block hover:rotate-12 transition-transform">👋</span></h1>
+<p class="font-body text-on-surface-variant mt-1">Here is what is happening with your ledger today.</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span>
+</button>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<!-- Token Balance Card (Hero Area) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[24px] p-8 relative overflow-hidden flex flex-col justify-between" style="box-shadow: 0 16px 32px rgba(27, 28, 28, 0.06);">
+<!-- Subtle decorative background element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<h2 class="font-headline text-sm font-semibold tracking-wider text-on-surface-variant uppercase mb-6">Current Balance</h2>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-mono text-[3.5rem] font-bold text-on-surface leading-none tracking-tight">1,240<span class="text-on-surface-variant text-[2rem]">.00</span></span>
+<span class="font-headline text-lg font-medium text-primary">Evolve Tokens</span>
+</div>
+<p class="font-mono text-sm text-on-surface-variant mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+                        Lifetime earned: 1,890 tokens
+                    </p>
+</div>
+<div class="mt-12 flex gap-4">
+<button class="px-6 py-3 rounded-xl bg-gradient-primary text-on-primary font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">package</span>
+                        Schedule Pickup
+                    </button>
+<button class="px-6 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-medium flex items-center justify-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">map</span>
+                        Find Nearby Centers
+                    </button>
+</div>
+</div>
+<!-- Impact Summary Card -->
+<div class="col-span-12 lg:col-span-4 bg-primary rounded-[24px] p-8 text-on-primary relative overflow-hidden flex flex-col justify-between">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80')] opacity-10 bg-cover bg-center mix-blend-overlay" data-alt="close up of green leaves with sunlight filtering through creating a soft bokeh effect"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-sm font-semibold tracking-wider text-primary-fixed-dim uppercase mb-6">Your Impact</h2>
+<div class="space-y-6">
+<div>
+<p class="font-mono text-2xl font-bold mb-1">18.4 kg</p>
+<p class="font-body text-sm text-primary-fixed-dim">CO2 saved this month</p>
+</div>
+<div>
+<p class="font-mono text-2xl font-bold mb-1">7 items</p>
+<p class="font-body text-sm text-primary-fixed-dim">Successfully recycled</p>
+</div>
+</div>
+</div>
+<div class="relative z-10 mt-8 bg-surface-tint/30 rounded-xl p-4 flex items-start gap-3 border border-primary-fixed/20 backdrop-blur-sm">
+<span class="text-xl">🌳</span>
+<p class="font-body text-sm text-on-primary leading-tight">That's equivalent to planting <strong class="font-semibold text-primary-fixed">2 trees</strong> in the urban canopy project.</p>
+</div>
+</div>
+</div>
+<!-- Recent Activity Section (Table Alternative) -->
+<div class="bg-surface-container-low rounded-[24px] p-8">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-xl font-semibold text-on-surface">Recent Activity</h2>
+<button class="text-primary font-medium text-sm hover:underline flex items-center gap-1">
+                    View Ledger
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-center justify-between hover:bg-surface-bright transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-primary-container/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<p class="font-headline font-medium text-on-surface mb-0.5">Electronics Pickup</p>
+<p class="font-mono text-xs text-on-surface-variant">ID: EVL-8942 • 3 Items</p>
+</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<p class="font-mono text-sm text-on-surface font-medium">Oct 24, 2024</p>
+<p class="font-mono text-xs text-primary font-bold mt-0.5">+120 EVL</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-secondary-container text-on-secondary-container border border-outline-variant/15">
+                            Completed
+                        </span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-center justify-between hover:bg-surface-bright transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-primary-container/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">recycling</span>
+</div>
+<div>
+<p class="font-headline font-medium text-on-surface mb-0.5">Glass Drop-off</p>
+<p class="font-mono text-xs text-on-surface-variant">ID: EVL-8810 • 12 Items</p>
+</div>
+</div>
+<div class="flex items-center gap-6 text-right">
+<div>
+<p class="font-mono text-sm text-on-surface font-medium">Oct 18, 2024</p>
+<p class="font-mono text-xs text-primary font-bold mt-0.5">+45 EVL</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface-variant border border-outline-variant/15">
+                            Processing
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
