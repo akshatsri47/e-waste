@@ -249,47 +249,34 @@ body {
   animation: float 7s ease-in-out infinite;
 }
 
-/* — Headline entrance (hero) — */
-@keyframes heroHeadline {
-  from { opacity: 0; transform: translateY(32px) skewY(2deg); }
-  to   { opacity: 1; transform: translateY(0) skewY(0deg); }
-}
-#hero-headline {
-  animation: heroHeadline 1s cubic-bezier(0.16,1,0.3,1) 0.15s both;
-  will-change: transform;
-}
-
-/* — CTA area entrance — */
-@keyframes heroCta {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-#hero-cta-area {
-  animation: heroCta 0.9s cubic-bezier(0.16,1,0.3,1) 0.45s both;
+/* ── Hide hero elements until GSAP reveals them (prevents flash) ── */
+/* NOTE: use #landing-nav NOT bare "nav" — sidebar also uses <nav> */
+#hero-badge,
+#hero-headline,
+#hero-cta-btn,
+#hero-back-img,
+#hero-front-img,
+#hero-stat-card,
+#hero-green-card,
+#hero-desc,
+.hero-social-pill,
+#landing-nav {
+  opacity: 0;
 }
 
-/* — Hero badge entrance — */
-@keyframes heroBadge {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-#hero-badge {
-  animation: heroBadge 0.7s cubic-bezier(0.16,1,0.3,1) 0s both;
-}
-
-/* — Nav entrance — */
-@keyframes navSlideDown {
-  from { opacity: 0; transform: translateY(-100%); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.nav-animate {
-  animation: navSlideDown 0.6s cubic-bezier(0.16,1,0.3,1) both;
+/* — GPU hints for GSAP-animated elements — */
+#hero-headline, #hero-badge, #hero-cta-btn,
+#hero-back-img, #hero-front-img, #hero-stat-card,
+#hero-green-card, #hero-desc,
+.service-card, .why-point, #why-center-img,
+#stats-section, #faq-section, #cta-card,
+#footer-evolve {
+  will-change: transform, opacity;
 }
 
-/* — Hero image parallax containers — */
+/* — Hero image parallax containers (mouse tilt still works via JS) — */
 #hero-back-img, #hero-front-img {
-  transition: transform 0.12s linear;
-  will-change: transform;
+  transition: box-shadow 0.3s ease;
 }
 
 

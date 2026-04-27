@@ -167,43 +167,91 @@ function AnimatedStat({
   label: string;
   delay?: number;
 }) {
-  const [triggered, setTriggered] = useState(false);
-  const [count, setCount] = useState(0);
-  const elRef = useRef<HTMLDivElement>(null);
+  const numRef  = useRef<HTMLSpanElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const ran     = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting && !triggered) setTimeout(() => setTriggered(true), delay * 1000); },
-      { threshold: 0.5 }
-    );
-    if (elRef.current) observer.observe(elRef.current);
+    const el   = numRef.current;
+    const wrap = wrapRef.current;
+    if (!el || !wrap) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting || ran.current) return;
+      ran.current = true;
+      observer.disconnect();
+
+      // kick off after caller-specified delay
+      setTimeout(async () => {
+        const gsapMod = await import('gsap');
+        const gsap    = (gsapMod as any).default ?? (gsapMod as any).gsap ?? gsapMod;
+
+        const DIGITS  = '0123456789';
+        const totalMs = 1600;
+        const fps     = 60;
+        const frames  = (totalMs / 1000) * fps;
+        let   frame   = 0;
+
+        const tick = () => {
+          frame++;
+          const progress  = frame / frames;
+          const lockCount = Math.floor(progress * String(value).length);
+          const valueStr  = String(value);
+          let   display   = '';
+
+          for (let i = 0; i < valueStr.length; i++) {
+            if (i < lockCount) {
+              display += valueStr[i];
+            } else {
+              display += DIGITS[Math.floor(Math.random() * DIGITS.length)];
+            }
+          }
+          el.textContent = display + suffix;
+
+          if (frame < frames) requestAnimationFrame(tick);
+          else {
+            el.textContent = value + suffix;
+            // green flash finish
+            gsap.fromTo(el, { color: '#7A9A3A' }, { color: '#1b1c1c', duration: 0.6, ease: 'power2.out' });
+          }
+        };
+
+        // entrance pop
+        gsap.fromTo(wrap,
+          { opacity: 0, y: 28 },
+          { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }
+        );
+        el.textContent = '0'.repeat(String(value).length) + suffix;
+        requestAnimationFrame(tick);
+      }, delay * 1000);
+    }, { threshold: 0.5 });
+
+    observer.observe(wrap);
     return () => observer.disconnect();
-  }, [triggered, delay]);
-
-  useEffect(() => {
-    if (!triggered) return;
-    let start = 0;
-    const duration = 1800;
-    const step = value / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= value) { setCount(value); clearInterval(timer); }
-      else setCount(Math.floor(start));
-    }, 16);
-    return () => clearInterval(timer);
-  }, [triggered, value]);
+  }, [value, suffix, delay]);
 
   return (
-    <div ref={elRef} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-      <span style={{ fontSize: '32px', fontWeight: 700, color: '#1b1c1c' }}>
-        {count}{suffix}
+    <div ref={wrapRef} style={{ display: 'flex', flexDirection: 'column', gap: '8px', opacity: 0 }}>
+      <span
+        ref={numRef}
+        style={{
+          fontSize: '48px', fontWeight: 800, color: '#1b1c1c',
+          fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em',
+          fontFamily: 'monospace',
+        }}
+      >
+        {'0'.repeat(String(value).length)}{suffix}
       </span>
-      <span style={{ fontSize: '14px', color: '#6f7a70', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <span style={{
+        fontSize: '13px', color: '#6f7a70', fontWeight: 600,
+        textTransform: 'uppercase', letterSpacing: '0.1em',
+      }}>
         {label}
       </span>
     </div>
   );
 }
+
 
 /* ─── FAQ Accordion ─────────────────────────────────────────────── */
 const FAQ_DATA = [
