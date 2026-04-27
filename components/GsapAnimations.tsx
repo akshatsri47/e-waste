@@ -213,7 +213,7 @@ export default function GsapAnimations() {
           // 3 ── SCROLL-TRIGGERED PARALLAX IMAGE (img inside #why-center-img)
           //      The pill image drifts upward independently as the page scrolls,
           //      creating a subtle depth / Ken-Burns effect.
-          const whyCenterInner = document.querySelector<HTMLElement>('#why-center-img img');
+          /* const whyCenterInner = document.querySelector<HTMLElement>('#why-center-img img');
           if (whyCenterInner) {
             gsap.to(whyCenterInner, {
               scrollTrigger: {
@@ -226,7 +226,7 @@ export default function GsapAnimations() {
               scale: 1.08,
               ease: 'none',
             });
-          }
+          } */
 
           // 4 ── HOVER MICRO-INTERACTION (.why-point)
           //      On mouse-enter: card lifts, slight tilt toward cursor, accent

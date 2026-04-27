@@ -92,10 +92,10 @@ function HeroTilt() {
       const dy = (e.clientY - cy) / rect.height;
 
       // Parallax layers
-      if (backImg)    backImg.style.transform    = `translate(${dx * -18}px, ${dy * -10}px)`;
-      if (frontImg)   frontImg.style.transform   = `translate(${dx * -28}px, ${dy * -14}px)`;
-      if (statCard)   statCard.style.transform   = `translate(${dx * 14}px, ${dy * 10}px) rotate(${dx * 2}deg)`;
-      if (headline)   headline.style.transform   = `translate(${dx * 8}px, ${dy * 4}px)`;
+      if (backImg) backImg.style.transform = `translate(${dx * -18}px, ${dy * -10}px)`;
+      if (frontImg) frontImg.style.transform = `translate(${dx * -28}px, ${dy * -14}px)`;
+      if (statCard) statCard.style.transform = `translate(${dx * 14}px, ${dy * 10}px) rotate(${dx * 2}deg)`;
+      if (headline) headline.style.transform = `translate(${dx * 8}px, ${dy * 4}px)`;
     };
 
     const handleLeave = () => {
@@ -167,12 +167,12 @@ function AnimatedStat({
   label: string;
   delay?: number;
 }) {
-  const numRef  = useRef<HTMLSpanElement>(null);
+  const numRef = useRef<HTMLSpanElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
-  const ran     = useRef(false);
+  const ran = useRef(false);
 
   useEffect(() => {
-    const el   = numRef.current;
+    const el = numRef.current;
     const wrap = wrapRef.current;
     if (!el || !wrap) return;
 
@@ -184,20 +184,20 @@ function AnimatedStat({
       // kick off after caller-specified delay
       setTimeout(async () => {
         const gsapMod = await import('gsap');
-        const gsap    = (gsapMod as any).default ?? (gsapMod as any).gsap ?? gsapMod;
+        const gsap = (gsapMod as any).default ?? (gsapMod as any).gsap ?? gsapMod;
 
-        const DIGITS  = '0123456789';
+        const DIGITS = '0123456789';
         const totalMs = 1600;
-        const fps     = 60;
-        const frames  = (totalMs / 1000) * fps;
-        let   frame   = 0;
+        const fps = 60;
+        const frames = (totalMs / 1000) * fps;
+        let frame = 0;
 
         const tick = () => {
           frame++;
-          const progress  = frame / frames;
+          const progress = frame / frames;
           const lockCount = Math.floor(progress * String(value).length);
-          const valueStr  = String(value);
-          let   display   = '';
+          const valueStr = String(value);
+          let display = '';
 
           for (let i = 0; i < valueStr.length; i++) {
             if (i < lockCount) {
@@ -256,24 +256,24 @@ function AnimatedStat({
 /* ─── FAQ Accordion ─────────────────────────────────────────────── */
 const FAQ_DATA = [
   {
-    q: 'What is corporate e-waste management?',
-    a: 'Corporate e-waste management is the secure, compliant collection and processing of outdated or surplus IT hardware from businesses to ensure environmental responsibility and data security.',
+    q: 'What types of e-waste can I recycle?',
+    a: 'You can recycle items like phones, laptops, tablets, chargers, and small electronic devices. You’ll see all supported items when scheduling a pickup.',
   },
   {
-    q: 'How do you guarantee data destruction?',
+    q: 'How does the pickup process work?',
     a: 'We use DoD 5220.22-M certified data wiping and physical destruction processes, issuing a Certificate of Destruction for every device processed.',
   },
   {
-    q: 'What types of hardware do you accept?',
-    a: 'We accept laptops, desktops, servers, mobile devices, networking equipment, printers, and virtually all enterprise IT hardware.',
+    q: 'Can I drop off my e-waste instead of scheduling a pickup?',
+    a: 'Yes. You can find nearby verified recycling centers using the map and choose a convenient drop-off option.',
   },
   {
-    q: 'How do I track ESG compliance?',
-    a: 'Your personalised dashboard provides real-time ESG metrics — CO2 offsets, landfill diversion rates, and certified recycling reports — all automatically updated.',
+    q: ' Do I get anything in return for recycling?',
+    a: 'Yes. You earn tokens for every device you recycle, which can be redeemed for rewards and benefits.',
   },
   {
-    q: 'Are your recycling partners certified?',
-    a: 'Yes. Every partner in our network holds R2 (Responsible Recycling) and/or e-Stewards certification — the two leading international standards.',
+    q: 'How do you ensure my devices are handled safely?',
+    a: 'We work with trusted and certified recycling partners to ensure every device is processed responsibly and with full transparency.',
   },
 ];
 

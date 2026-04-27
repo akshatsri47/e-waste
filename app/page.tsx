@@ -225,7 +225,7 @@ export default function Home() {
           .evolve-stat-bubble .icon svg { width: 16px; height: 16px; fill: white; }
 
           .evolve-green-card {
-            position: absolute; left: 60px; bottom: 60px;
+            position: absolute; right: 60px; bottom: 60px;
             background: var(--green-card); border-radius: var(--radius);
             padding: 28px; max-width: 320px; z-index: 5;
             box-shadow: var(--shadow);
@@ -334,9 +334,10 @@ export default function Home() {
           </div>
 
           <div className="evolve-hero-left">
-            <div className="evolve-hero-label">⊘ Energy Development</div>
-            <h1 className="evolve-hero-title">Powering a<br /><span className="accent">Greener</span><br />Tomorrow</h1>
-            <p className="evolve-hero-sub">Discover clean, affordable, and renewable power for your home and business. Reduce your carbon footprint today.</p>
+            <div className="evolve-hero-label">  Easy pickup • Verified recyclers • No hassle</div>
+            <h1 className="evolve-hero-title">Recycle<br /><span className="accent"> Old Gadgets </span><br /> Get Rewarded .
+            </h1>
+            <p className="evolve-hero-sub"> Schedule a pickup or find nearby recycling centers. Earn tokens and track your environmental impact.</p>
             <div className="evolve-hero-actions">
               <Link href="#cta" className="evolve-btn-primary">
                 DISCUSS PROJECT
@@ -353,23 +354,24 @@ export default function Home() {
 
           <div className="evolve-hero-right">
             <div className="evolve-hero-card evolve-card-main">
-              <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80" alt="Wind turbines in green field" onError={(e) => { e.currentTarget.className = 'img-wind'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
+              <img src="https://etn.news/images/easyblog_articles/1789/b2ap3_large_E-Waste-Recycling-1.jpg?w=600&q=80" alt="Wind turbines in green field" onError={(e) => { e.currentTarget.className = 'img-wind'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
             </div>
             <div className="evolve-stat-bubble">
-              <div className="num">32%</div>
-              <div className="label">Higher efficiency compared to<br />conventional wind turbines</div>
+              <div className="num">70%</div>
+              <div className="label">reduction in environmental  <br /> harm with proper recycling</div>
               <div className="icon">
                 <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2" /></svg>
               </div>
             </div>
             <div className="evolve-hero-card evolve-card-secondary">
-              <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400&q=80" alt="Solar panels" onError={(e) => { e.currentTarget.className = 'img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
+              <img src="https://testingpython.skvewaste.com/media/E-Waste%20Recycling_11zon_zS8f1Rx.webp?w=400&q=80" alt="Solar panels" onError={(e) => { e.currentTarget.className = 'img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
             </div>
           </div>
 
           <div className="evolve-green-card evolve-reveal">
-            <h3>Bring Your<br />Ideas to Life</h3>
-            <p>Delivering reliable and innovative energy solutions that power industries and communities</p>
+            <h3>Make a
+              Real Impact</h3>
+            <p>Recycling one device can save up to 200 kg of CO₂. Track your contribution easily.</p>
           </div>
         </section>
       </div>
@@ -407,15 +409,14 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              WE ARE DECODING THE FUTURE OF SUSTAINABLE HARDWARE LIFECYCLES.
+              WE ARE REDEFINING HOW THE WORLD HANDLES <br />E-WASTE.
             </h2>
 
             <p style={{
               marginTop: '32px', fontSize: '17px', color: '#666',
               lineHeight: 1.65, maxWidth: '640px', margin: '32px auto 0',
             }}>
-              Transforming how enterprises retire, recover and re-purpose electronic assets —
-              zero landfill, full compliance, certified impact.
+              Transforming how electronics are retired, recovered, and re-purposed — minimizing waste, maximizing value, delivering measurable impact.
             </p>
           </section>
 
@@ -431,14 +432,14 @@ export default function Home() {
         <div style={{ backgroundColor: '#f7f5f0', width: '100%' }}>
           <section id="about" style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ maxWidth: '720px', margin: '0 auto 56px', fontSize: '17px', color: '#555', lineHeight: 1.65 }}>
-              We are a network of sustainability experts and logistics professionals dedicated to transforming corporate hardware disposal with certified, compliant, and transparent e-waste solutions.
+              We’re a team of builders and environmental thinkers working to fix how electronic waste is handled making it simpler, more responsible, and accessible to everyone.<br />We work with trusted and certified recycling partners to ensure every device is handled safely, transparently, and with real environmental responsibility.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '64px' }}>
               {([
-                { value: 2400, suffix: 'k+', label: 'Tons CO2 Offset', delay: 0.2 },
-                { value: 500, suffix: '+', label: 'Certified Facilities', delay: 0.3 },
-                { value: 100, suffix: '%', label: 'Data Security', delay: 0.4 },
-                { value: 99, suffix: '%', label: 'Landfill Diversion', delay: 0.5 },
+                { value: 250, suffix: 'k+', label: 'Tons CO2 Offset targeted', delay: 0.2 },
+                { value: 5, suffix: '+', label: 'Certified Facilities', delay: 0.3 },
+                { value: "24", suffix: ' hrs', label: 'Average pickup time ', delay: 0.4 },
+                { value: 98, suffix: '%', label: 'Landfill Diversion rate', delay: 0.5 },
               ] as const).map(s => (
                 <AnimatedStat key={s.label} value={s.value} suffix={s.suffix} label={s.label} delay={s.delay} />
               ))}
@@ -526,44 +527,46 @@ export default function Home() {
           `}</style>
           <section id="services" className="evolve-services">
             <div className="evolve-section-header evolve-reveal">
-              <div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%' }}>
                 <div className="evolve-section-tag">What We Offer</div>
                 <h2 className="evolve-section-title">Our Services</h2>
               </div>
-              <p className="evolve-section-desc">We provide end-to-end green energy solutions to help you reduce your carbon footprint and lower your electricity bills.</p>
+              {/* <p className="evolve-section-desc">We provide end-to-end green energy solutions to help you reduce your carbon footprint and lower your electricity bills.</p> */}
             </div>
 
             <div className="evolve-services-row evolve-stagger evolve-reveal">
               <div className="evolve-service-card" onClick={(e) => { document.querySelectorAll('.evolve-service-card').forEach(c => c.classList.remove('active')); e.currentTarget.classList.add('active'); }}>
-                <img className="evolve-service-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&q=80" alt="Energy Audit" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
+                <img className="evolve-service-img" src="https://zolopik.com/wp-content/uploads/2021/04/Zolopik-EWaste-Recycling-e1619093099758.jpg?w=400&q=80" alt="Energy Audit" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
                 <div className="evolve-service-body">
                   <div className="evolve-service-icon">
                     <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                   </div>
-                  <h4>Energy Audit & Consulting</h4>
-                  <p>Comprehensive analysis of your energy consumption to identify savings opportunities and optimize efficiency.</p>
+                  <h4>Schedule E-Waste Pickup</h4>
+                  <p>Request a pickup for your old devices and get them collected from your doorstep, quickly and responsibly.</p>
                 </div>
               </div>
 
               <div className="evolve-service-card active" onClick={(e) => { document.querySelectorAll('.evolve-service-card').forEach(c => c.classList.remove('active')); e.currentTarget.classList.add('active'); }}>
-                <img className="evolve-service-img" src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=400&q=80" alt="Smart Energy" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-green'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
+                <img className="evolve-service-img" src="https://c.ndtvimg.com/2022-06/qj34tm2g_car_625x300_17_June_22.jpg?w=400&q=80" alt="Smart Energy" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-green'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
                 <div className="evolve-service-body">
                   <div className="evolve-service-icon">
                     <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
                   </div>
-                  <h4>Smart Energy Products</h4>
-                  <p>Cutting-edge smart devices and systems that intelligently manage your energy usage in real time.</p>
+                  <h4>Find Nearby Recycling Centers
+                  </h4>
+                  <p>Locate verified e-waste recyclers within 30 km and choose a convenient drop-off option near you..</p>
                 </div>
               </div>
 
               <div className="evolve-service-card" onClick={(e) => { document.querySelectorAll('.evolve-service-card').forEach(c => c.classList.remove('active')); e.currentTarget.classList.add('active'); }}>
-                <img className="evolve-service-img" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Solar Installation" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
+                <img className="evolve-service-img" src="rewards.jpeg" alt="Earn Rewards" onError={(e) => { e.currentTarget.className = 'evolve-service-img img-solar'; e.currentTarget.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; }} />
                 <div className="evolve-service-body">
                   <div className="evolve-service-icon">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
                   </div>
-                  <h4>Solar Panel Installation</h4>
-                  <p>Professional solar panel installation for residential and commercial properties with full warranties.</p>
+                  <h4>Earn Rewards & Track Impact
+                  </h4>
+                  <p>Get tokens for every device you recycle and see the environmental impact you create.</p>
                 </div>
               </div>
             </div>
@@ -574,15 +577,15 @@ export default function Home() {
         <div style={{ backgroundColor: '#FAF7F0', width: '100%' }}>
           <section id="why" style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto' }}>
             <ScrollAnimation as="h2" direction="up" style={{ fontSize: '30px', fontWeight: 700, color: '#1b1c1c', textAlign: 'center', marginBottom: '56px' }}>
-              Why Choose Us?
+              Why Choose Evolve?
             </ScrollAnimation>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '40px' }}>
 
               {/* Left points */}
               <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: '48px', maxWidth: '320px' }}>
                 {[
-                  { n: '01', t: 'Verified Sustainability', d: 'Every pickup tracked on The Living Ledger — immutable proof of your environmental impact.' },
-                  { n: '02', t: 'Certified Partners', d: 'Global network of R2 and e-Stewards certified processing facilities.' },
+                  { n: '01', t: ' Built for Real-World Recycling', d: ' Designed around how people actually deal with old devices — simple, practical, and easy to adopt.' },
+                  { n: '02', t: 'Verified & Trustworthy Process', d: ' Handled through certified partners with clear, accountable systems you can rely on.' },
                 ].map(p => (
                   <div key={p.n} className="why-point" style={{ display: 'flex', gap: '20px' }}>
                     <span style={{ fontSize: '30px', fontWeight: 300, color: '#ccc', flexShrink: 0 }}>{p.n}</span>
@@ -596,14 +599,14 @@ export default function Home() {
 
               {/* Center image */}
               <div id="why-center-img" style={{ flex: '0 0 auto', width: '260px', height: '360px', borderRadius: '100px', overflow: 'hidden', boxShadow: '0 20px 48px rgba(0,0,0,0.1)' }}>
-                <img className="parallax-img" src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=600&auto=format&fit=crop" style={{ width: '100%', height: '115%', objectFit: 'cover' }} alt="Recycling professional" />
+                <img src="https://images.openai.com/static-rsc-4/sAZvVJlzd_8Z4euTbqrfll616n1KVdGNZWJ1UWJvMuzifyi6e806G6HYMZQNnb41Qv8gXbgvm5pqCPloZPkY6PFem64e1vaTBkCc3dZNJYbfRFPIuKemhrisGFPsD5TSKI2Tc6WLp72WUnzmr9cz4mWTnqZKnL8eubJKrWJxByaSuyWCATKe-0nvE5qW9Dyc?purpose=inline&q=80&w=600&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'right' }} alt="Recycling professional" />
               </div>
 
               {/* Right points */}
               <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: '48px', maxWidth: '320px' }}>
                 {[
-                  { n: '03', t: 'Secure Chain of Custody', d: 'End-to-end tracking from loading dock to final destruction — data never compromised.' },
-                  { n: '04', t: 'Real-time Impact', d: 'ESG metrics update instantly on your dashboard as materials are processed.' },
+                  { n: '03', t: 'Transparency You Can See', d: 'A clear journey from collection to final processing, so you always know what happens next.' },
+                  { n: '04', t: ' Impact That Scales', d: 'Turning individual actions into meaningful environmental change through a connected, responsible ecosystem.' },
                 ].map(p => (
                   <div key={p.n} className="why-point" style={{ display: 'flex', gap: '20px' }}>
                     <span style={{ fontSize: '30px', fontWeight: 300, color: '#ccc', flexShrink: 0 }}>{p.n}</span>
@@ -671,14 +674,14 @@ export default function Home() {
           <section id="cta" className="evolve-cta">
             <div className="evolve-cta-box evolve-reveal">
               <div className="evolve-cta-content">
-                <h2>Ready to make the switch?<br />Let's talk about how you can power your future with <em>green energy.</em></h2>
+                <h2>Ready to make a difference?<br />Let’s talk about how you can earn rewards through  <em>e-waste recycling.</em></h2>
                 <Link href="/login" className="evolve-btn-green">
                   Get Started
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                 </Link>
               </div>
               <div className="evolve-cta-img" style={{ height: '300px', alignSelf: 'center', margin: '20px', borderRadius: '20px', overflow: 'hidden' }}>
-                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&q=80" alt="Green plants" onError={(e) => { e.currentTarget.style.background = 'linear-gradient(135deg,#a5d6a7,#1b5e20)' }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="https://fastly.restofworld.org/uploads/2025/08/sized_Ewaste_ChinkyShukla-7-scaled.jpg?width=800&dpr=2&crop=16:9?w=500&q=80" alt="Green plants" onError={(e) => { e.currentTarget.style.background = 'linear-gradient(135deg,#a5d6a7,#1b5e20)' }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
           </section>
@@ -744,7 +747,7 @@ export default function Home() {
                 </div>
                 Evolve
               </Link>
-              <p>Discover clean, affordable, and renewable power for your home and business.</p>
+              <p>Evolve the e-waste solution — a smarter way to deal with old devices.</p>
               <div className="evolve-footer-social">
                 <Link href="#">
                   <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
@@ -771,10 +774,10 @@ export default function Home() {
             <div className="evolve-footer-col">
               <h5>Services</h5>
               <ul>
-                <li><Link href="#">Energy Audit</Link></li>
-                <li><Link href="#">Smart Products</Link></li>
-                <li><Link href="#">Solar Panel</Link></li>
-                <li><Link href="#">EV Charging</Link></li>
+                <li><Link href="#">Pickup</Link></li>
+                <li><Link href="#">Mapping </Link></li>
+                <li><Link href="#">Rewards</Link></li>
+                <li><Link href="#">Recycle</Link></li>
               </ul>
             </div>
 
