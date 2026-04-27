@@ -36,7 +36,7 @@ export default async function AdminAnalyticsPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <p style={{ fontSize: '12px', fontFamily: '"Roboto Mono", monospace', fontWeight: 700, color: '#6f7a70', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Corporate Dashboard</p>
-            <h2 style={{ fontSize: '28px', fontWeight: 600, color: '#1b1c1c', letterSpacing: '-0.02em' }}>EcoRecycle Analytics</h2>
+            <h2 style={{ fontSize: '28px', fontWeight: 600, color: '#1b1c1c', letterSpacing: '-0.02em' }}>Evolve Analytics</h2>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div style={{ backgroundColor: '#f5f3f3', padding: '8px 16px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EcoRecycle – E-Waste Pickup",
+  title: "Evolve – E-Waste Pickup",
   description: "Schedule e-waste pickups, earn points, and help the planet.",
 };
 

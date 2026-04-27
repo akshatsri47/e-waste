@@ -112,7 +112,7 @@ export default async function PickupDetailPage({ params }: { params: Promise<{ i
                     <span className="material-symbols-outlined">local_shipping</span>
                   </div>
                   <div>
-                    <p style={{ fontWeight: 600, color: '#1b1c1c' }}>EcoRecycle Direct</p>
+                    <p style={{ fontWeight: 600, color: '#1b1c1c' }}>Evolve Direct</p>
                     <p style={{ fontSize: '14px', color: '#6f7a70', marginTop: '4px' }}>Certified E-Waste Handler</p>
                   </div>
                 </div>

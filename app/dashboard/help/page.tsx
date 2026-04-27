@@ -40,7 +40,7 @@ export default function HelpPage() {
         <div style={{ fontSize: '20px', marginBottom: '8px' }}>📧</div>
         <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-primary)', marginBottom: '4px' }}>Still need help?</div>
         <div style={{ fontSize: '13px', color: 'var(--color-neutral-500)' }}>
-          Email us at <a href="mailto:support@ecorecycle.in" style={{ color: 'var(--color-primary)' }}>support@ecorecycle.in</a>
+          Email us at <a href="mailto:support@evolve.in" style={{ color: 'var(--color-primary)' }}>support@evolve.in</a>
         </div>
       </div>
     </div>

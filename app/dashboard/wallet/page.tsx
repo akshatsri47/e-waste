@@ -34,7 +34,7 @@ export default async function WalletPage() {
 
   return (
     <div style={{ flex: 1, width: '100%', maxWidth: '1400px', margin: '0 auto', color: '#1b1c1c', backgroundColor: '#fbf9f8', minHeight: '100vh', fontFamily: 'sans-serif', padding: '48px', boxSizing: 'border-box' }}>
-      
+
       {/* Header Section */}
       <div style={{ marginBottom: '48px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         <div>
@@ -51,7 +51,7 @@ export default async function WalletPage() {
         <div style={{ flex: '1 1 60%', background: 'linear-gradient(to bottom right, #006036, #1a7a4a)', borderRadius: '24px', padding: '32px', position: 'relative', overflow: 'hidden', color: '#ffffff', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div style={{ position: 'absolute', right: '-80px', top: '-80px', width: '256px', height: '256px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '50%', filter: 'blur(40px)', pointerEvents: 'none' }}></div>
           <div style={{ position: 'absolute', left: '-40px', bottom: '-40px', width: '192px', height: '192px', backgroundColor: 'rgba(0,0,0,0.1)', borderRadius: '50%', filter: 'blur(30px)', pointerEvents: 'none' }}></div>
-          
+
           <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', flex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '32px', flexWrap: 'wrap', gap: '16px' }}>
               <div>
@@ -76,7 +76,7 @@ export default async function WalletPage() {
                   </button>
                 </Link>
               </div>
-              <Link href="/dashboard/pickups" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white', padding: '12px 24px', borderRadius: '12px', fontWeight: 600, fontSize: '14px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'background-color 0.2s' }}>
+              <Link href="/dashboard/impact" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white', padding: '12px 24px', borderRadius: '12px', fontWeight: 600, fontSize: '14px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'background-color 0.2s' }}>
                 <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>history</span>
                 <span>View Analytics</span>
               </Link>
@@ -98,7 +98,7 @@ export default async function WalletPage() {
                   <div style={{ fontSize: '12px', color: '#3f4941' }}>Items Diverted</div>
                 </div>
               </div>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: '#007b44', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <span className="material-symbols-outlined">co2</span>
@@ -110,7 +110,7 @@ export default async function WalletPage() {
               </div>
             </div>
           </div>
-          
+
           <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(190, 201, 190, 0.15)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px' }}>
               <span style={{ color: '#3f4941' }}>Global Rank</span>
@@ -154,15 +154,15 @@ export default async function WalletPage() {
                   const items = pickup.pickup_items as { item_type: string; quantity: number; points_awarded: number }[]
                   const itemType = items[0]?.item_type || 'other'
                   const pts = items.reduce((s, i) => s + (i.points_awarded || 0), 0)
-                  
+
                   let icon = 'devices'
                   let itemName = 'E-Waste Collection'
-                  
+
                   if (itemType === 'phone') { icon = 'smartphone'; itemName = 'Phone Collection' }
                   else if (itemType === 'laptop') { icon = 'laptop_mac'; itemName = 'Laptop Collection' }
                   else if (itemType === 'tv') { icon = 'tv'; itemName = 'TV Collection' }
                   else if (itemType === 'appliance') { icon = 'kitchen'; itemName = 'Appliance Collection' }
-                  
+
                   const isPending = pickup.status === 'scheduled' || pickup.status === 'pending'
                   const rowBg = index % 2 === 0 ? 'transparent' : 'rgba(245, 243, 243, 0.3)'
 

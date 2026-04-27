@@ -183,7 +183,7 @@ function LoginContent() {
         </div>
 
         <h1 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-neutral-900)', marginBottom: '4px' }}>
-          Welcome to EcoRecycle
+          Welcome to Evolve
         </h1>
         <p style={{ fontSize: '13px', color: 'var(--color-neutral-500)', marginBottom: '24px', lineHeight: 1.5 }}>
           {isAdmin ? 'Admin portal — manage pickups & users.' : 'Schedule pickups, earn eco-points, help the planet.'}

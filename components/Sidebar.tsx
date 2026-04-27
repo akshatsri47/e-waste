@@ -67,7 +67,7 @@ export default function Sidebar({ isAdmin = false, userName, userEmail }: Sideba
               <path d="M22 8l-2 4M10 8l2 4M16 6v4" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
             </svg>
           </div>
-          EcoRecycle
+          Evolve
           {isAdmin && <span style={{ marginLeft: '8px', fontSize: '10px', backgroundColor: '#006036', color: 'white', padding: '2px 8px', borderRadius: '9999px' }}>ADMIN</span>}
         </div>
         

@@ -96,7 +96,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
 
   return (
     <div style={{ flex: 1, padding: '48px', backgroundColor: '#fbf9f8', color: '#1b1c1c', fontFamily: '"Inter", sans-serif', boxSizing: 'border-box', minHeight: '100vh', width: '100%' }}>
-      
+
       {/* Toast */}
       {toast && (
         <div style={{
@@ -113,7 +113,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
       {/* Page Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '24px' }}>
         <div>
-          <p style={{ fontSize: '11px', fontFamily: '"Roboto Mono", monospace', fontWeight: 700, color: '#3f4941', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>Logistics Ledger</p>
+          <p style={{ fontSize: '11px', fontFamily: '"Roboto Mono", monospace', fontWeight: 700, color: '#3f4941', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>Logistics activity</p>
           <h1 style={{ fontSize: '28px', fontWeight: 600, color: '#1b1c1c', letterSpacing: '-0.02em', marginBottom: '8px' }}>Pickup History</h1>
           <p style={{ fontSize: '14px', color: '#3f4941', maxWidth: '600px' }}>A comprehensive administrative record of all scheduled, completed, and cancelled collection events. Click to view details or process pickups.</p>
         </div>
@@ -128,7 +128,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
             color: filter === f ? '#00210f' : '#3f4941',
             fontWeight: filter === f ? 600 : 500, fontSize: '14px',
             border: 'none', cursor: 'pointer', transition: 'background-color 0.2s', textTransform: 'capitalize'
-          }} onMouseEnter={(e) => { if(filter !== f) e.currentTarget.style.backgroundColor = '#e4e2e2' }} onMouseLeave={(e) => { if(filter !== f) e.currentTarget.style.backgroundColor = '#f5f3f3' }}>
+          }} onMouseEnter={(e) => { if (filter !== f) e.currentTarget.style.backgroundColor = '#e4e2e2' }} onMouseLeave={(e) => { if (filter !== f) e.currentTarget.style.backgroundColor = '#f5f3f3' }}>
             {f} <span style={{ opacity: 0.7 }}>({f === 'all' ? pickups.length : pickups.filter(p => p.status === f).length})</span>
           </button>
         ))}
@@ -145,7 +145,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
 
       {/* SaaS Data Table (Bento Style Rows) */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        
+
         {/* Table Header */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '16px', padding: '8px 24px', fontSize: '11px', fontFamily: '"Roboto Mono", monospace', fontWeight: 700, color: '#3f4941', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           <div style={{ gridColumn: 'span 2' }}>Status</div>
@@ -170,7 +170,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
             const awardedPts = items.reduce((s, i) => s + (i.points_awarded || 0), 0)
             const user = pickup.users
             const isScheduled = pickup.status === 'scheduled'
-            
+
             return (
               <div key={pickup.id} style={{
                 display: 'grid', gridTemplateColumns: 'repeat(12, minmax(0, 1fr))', gap: '16px', alignItems: 'center',
@@ -181,11 +181,11 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
                 transition: 'background-color 0.3s, transform 0.2s',
                 opacity: pickup.status === 'cancelled' ? 0.75 : 1
               }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#efeded'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = pickup.status === 'cancelled' ? '#fbf9f8' : '#ffffff'; e.currentTarget.style.transform = 'translateY(0)' }}>
-                
+
                 <div style={{ gridColumn: 'span 2', display: 'flex', alignItems: 'center' }}>
                   {getStatusBadge(pickup.status)}
                 </div>
-                
+
                 <div style={{ gridColumn: 'span 3', display: 'flex', flexDirection: 'column' }}>
                   <Link href={`/dashboard/pickups/${pickup.id}`} style={{ textDecoration: 'none' }}>
                     <span style={{ fontSize: '20px', fontFamily: '"Roboto Mono", monospace', fontWeight: 600, color: '#006036', textDecoration: pickup.status === 'cancelled' ? 'line-through' : 'none', textDecorationColor: '#6f7a70' }} onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}>
@@ -194,7 +194,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
                   </Link>
                   <span style={{ fontSize: '12px', color: '#6f7a70', marginTop: '4px' }}>{user?.name || 'Unknown'} • {user?.email}</span>
                 </div>
-                
+
                 <div style={{ gridColumn: 'span 3' }}>
                   <p style={{ fontSize: '14px', color: '#1b1c1c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontWeight: 500 }}>
                     {itemSummaries || 'No items listed'}
@@ -208,7 +208,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
                     )}
                   </div>
                 </div>
-                
+
                 <div style={{ gridColumn: 'span 2' }}>
                   <p style={{ fontSize: '14px', fontWeight: 500, color: '#1b1c1c' }}>
                     {pickup.time_slot ? format(new Date(pickup.time_slot), 'MMM d, yyyy') : format(new Date(pickup.created_at), 'MMM d, yyyy')}
@@ -217,7 +217,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
                     {pickup.time_slot ? format(new Date(pickup.time_slot), 'hh:mm a') : 'TBD'}
                   </p>
                 </div>
-                
+
                 <div style={{ gridColumn: 'span 2', display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
                   {isScheduled && (
                     <>
@@ -254,7 +254,7 @@ export default function AdminPickupsTable({ initialPickups }: { initialPickups: 
                     </span>
                   )}
                 </div>
-                
+
               </div>
             )
           })

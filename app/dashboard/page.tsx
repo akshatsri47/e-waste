@@ -51,12 +51,12 @@ export default async function DashboardPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 600, color: '#1b1c1c', letterSpacing: '-0.02em' }}>
             {greeting}, {firstName} <span style={{ display: 'inline-block' }}>👋</span>
           </h1>
-          <p style={{ marginTop: '4px', color: '#6f7a70', fontSize: '15px' }}>Here is what is happening with your ledger today.</p>
+          <p style={{ marginTop: '4px', color: '#6f7a70', fontSize: '15px' }}>Here is what is happening with your activity today.</p>
         </div>
-        <button style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3f4941', border: '1px solid #e4e2e2', position: 'relative', cursor: 'pointer' }}>
+        {/* <button style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3f4941', border: '1px solid #e4e2e2', position: 'relative', cursor: 'pointer' }}>
           <span className="material-symbols-outlined">notifications</span>
           <span style={{ position: 'absolute', top: '12px', right: '12px', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#ba1a1a' }}></span>
-        </button>
+        </button> */}
       </header>
 
       {/* Bento Grid Layout */}
@@ -125,11 +125,11 @@ export default async function DashboardPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#1b1c1c' }}>Recent Activity</h2>
           <Link href="/dashboard/pickups" style={{ textDecoration: 'none', color: '#006036', fontWeight: 600, fontSize: '14px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            View Ledger
+            View Activity
             <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
           </Link>
         </div>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {recentPickups.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '48px 0' }}>
@@ -142,7 +142,7 @@ export default async function DashboardPage() {
               const itemType = items[0]?.item_type || 'other'
               const numItems = items.reduce((s, i) => s + (i.quantity || 1), 0)
               const pts = items.reduce((s, i) => s + (i.points_awarded || 0), 0)
-              
+
               let icon = 'local_shipping'
               if (itemType === 'phone') icon = 'smartphone'
               else if (itemType === 'laptop') icon = 'laptop_mac'
@@ -153,7 +153,7 @@ export default async function DashboardPage() {
               let statusBg = '#f5f3f3'
               let statusText = '#1b1c1c'
               let statusLabel = 'Scheduled'
-              
+
               if (pickup.status === 'completed') {
                 statusBg = '#abffc6'
                 statusText = '#00522e'
