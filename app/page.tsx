@@ -438,7 +438,7 @@ export default function Home() {
               {([
                 { value: 250, suffix: 'k+', label: 'Tons CO2 Offset targeted', delay: 0.2 },
                 { value: 5, suffix: '+', label: 'Certified Facilities', delay: 0.3 },
-                { value: "24", suffix: ' hrs', label: 'Average pickup time ', delay: 0.4 },
+                { value: 24, suffix: ' hrs', label: 'Average pickup time ', delay: 0.4 },
                 { value: 98, suffix: '%', label: 'Landfill Diversion rate', delay: 0.5 },
               ] as const).map(s => (
                 <AnimatedStat key={s.label} value={s.value} suffix={s.suffix} label={s.label} delay={s.delay} />
