@@ -61,13 +61,15 @@ export default function Sidebar({ isAdmin = false, userName, userEmail }: Sideba
     }}>
       <div>
         <div style={{ fontWeight: 800, fontSize: '20px', color: '#006036', marginBottom: '32px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '32px', height: '32px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(to bottom right, #006036, #1a7a4a)' }}>
-            <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
-              <path d="M10 16l4 4 8-8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M22 8l-2 4M10 8l2 4M16 6v4" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
-            </svg>
-          </div>
-          Evolve
+          <Link href={isAdmin ? "/admin" : "/dashboard"} style={{ textDecoration: 'none', color: '#006036', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ width: '32px', height: '32px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(to bottom right, #006036, #1a7a4a)' }}>
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
+                <path d="M10 16l4 4 8-8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 8l-2 4M10 8l2 4M16 6v4" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+              </svg>
+            </div>
+            Evolve
+          </Link>
           {isAdmin && <span style={{ marginLeft: '8px', fontSize: '10px', backgroundColor: '#006036', color: 'white', padding: '2px 8px', borderRadius: '9999px' }}>ADMIN</span>}
         </div>
         

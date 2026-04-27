@@ -286,7 +286,7 @@ export default function Home() {
         <div className="evolve-progress-bar" style={{ transform: `scaleX(${scrollProgress})` }}></div>
 
         <nav className={`evolve-nav ${scrolled ? 'scrolled' : ''}`}>
-          <Link href="#" className="evolve-logo">
+          <Link href="#hero" className="evolve-logo">
             <div className="evolve-logo-icon">
               <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2" /></svg>
             </div>
@@ -302,7 +302,7 @@ export default function Home() {
           </ul>
 
           <div className="evolve-nav-cta">
-            <Link href="#cta" className="evolve-btn-contact">Get Started</Link>
+            <Link href="/login" className="evolve-btn-contact">Get Started</Link>
             <div className="evolve-btn-phone">
               <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" /></svg>
             </div>
@@ -429,7 +429,7 @@ export default function Home() {
 
         {/* ── STATS ── */}
         <div style={{ backgroundColor: '#f7f5f0', width: '100%' }}>
-          <section id="stats-section" style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
+          <section id="about" style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ maxWidth: '720px', margin: '0 auto 56px', fontSize: '17px', color: '#555', lineHeight: 1.65 }}>
               We are a network of sustainability experts and logistics professionals dedicated to transforming corporate hardware disposal with certified, compliant, and transparent e-waste solutions.
             </p>
@@ -572,7 +572,7 @@ export default function Home() {
 
         {/* ── WHY US ── */}
         <div style={{ backgroundColor: '#FAF7F0', width: '100%' }}>
-          <section style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto' }}>
+          <section id="why" style={{ padding: '80px 40px', maxWidth: '1400px', margin: '0 auto' }}>
             <ScrollAnimation as="h2" direction="up" style={{ fontSize: '30px', fontWeight: 700, color: '#1b1c1c', textAlign: 'center', marginBottom: '56px' }}>
               Why Choose Us?
             </ScrollAnimation>
@@ -621,7 +621,7 @@ export default function Home() {
 
         {/* ── FAQ ── */}
         <div style={{ backgroundColor: '#F3EDE3', width: '100%' }}>
-          <section id="faq-section" style={{ padding: '80px 40px', maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '56px', alignItems: 'center' }}>
+          <section id="faq" style={{ padding: '80px 40px', maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '56px', alignItems: 'center' }}>
             <div style={{ flex: '1 1 360px', height: '460px', borderRadius: '20px', overflow: 'hidden' }}>
               <img className="parallax-img" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop" style={{ width: '100%', height: '115%', objectFit: 'cover' }} alt="Sustainability" />
             </div>
@@ -677,8 +677,8 @@ export default function Home() {
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                 </Link>
               </div>
-              <div className="evolve-cta-img">
-                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&q=80" alt="Green plants" onError={(e) => { e.currentTarget.style.background = 'linear-gradient(135deg,#a5d6a7,#1b5e20)' }} />
+              <div className="evolve-cta-img" style={{ height: '300px', alignSelf: 'center', margin: '20px', borderRadius: '20px', overflow: 'hidden' }}>
+                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&q=80" alt="Green plants" onError={(e) => { e.currentTarget.style.background = 'linear-gradient(135deg,#a5d6a7,#1b5e20)' }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
           </section>
@@ -738,7 +738,7 @@ export default function Home() {
         <footer className="evolve-footer">
           <div className="evolve-footer-top">
             <div className="evolve-footer-brand">
-              <Link href="#" className="evolve-logo">
+              <Link href="#hero" className="evolve-logo">
                 <div className="evolve-logo-icon">
                   <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2" /></svg>
                 </div>
