@@ -14,7 +14,7 @@ export default async function AdminAnalyticsPage() {
     .order('created_at', { ascending: false })
 
   const allItems = pickups?.flatMap(p => p.pickup_items) || []
-  
+
   // Aggregate stats
   const totalVolume = allItems.reduce((acc, item: any) => acc + (item.quantity || 1), 0)
   const totalCO2 = allItems.reduce((acc, item: any) => acc + (item.co2_saved_kg || 0), 0)
@@ -30,7 +30,7 @@ export default async function AdminAnalyticsPage() {
 
   return (
     <div style={{ flex: 1, padding: '48px', backgroundColor: '#fbf9f8', color: '#1b1c1c', fontFamily: '"Inter", sans-serif', width: '100%', boxSizing: 'border-box' }}>
-      
+
       {/* Page Header */}
       <header style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
@@ -49,7 +49,7 @@ export default async function AdminAnalyticsPage() {
 
       {/* KPI Bento Grid */}
       <section style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px' }}>
-        
+
         {/* Main KPI: Total Recycled */}
         <div style={{ flex: '2 1 500px', background: 'linear-gradient(135deg, #f5f3f3, #efeded)', borderRadius: '16px', padding: '32px', position: 'relative', overflow: 'hidden' }}>
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', position: 'relative', zIndex: 10 }}>
@@ -88,7 +88,7 @@ export default async function AdminAnalyticsPage() {
 
       {/* Charts & Data Section */}
       <section style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', marginBottom: '32px' }}>
-        
+
         {/* Main Chart Area (Simulated) */}
         <div style={{ flex: '2 1 500px', backgroundColor: '#f5f3f3', borderRadius: '16px', padding: '24px', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyItems: 'space-between', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
@@ -102,7 +102,7 @@ export default async function AdminAnalyticsPage() {
             {[40, 60, 50, 80, 95, 70].map((h, i) => (
               <div key={i} style={{ flex: 1, backgroundColor: i === 5 ? 'rgba(0, 96, 54, 0.2)' : '#efeded', height: `${h}%`, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', borderRadius: '4px 4px 0 0', position: 'relative' }}></div>
             ))}
-            
+
             {/* Simulated Line Graph (CO2) */}
             <div style={{ position: 'absolute', inset: 0, paddingBottom: '32px', pointerEvents: 'none' }}>
               <svg viewBox="0 0 500 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%', overflow: 'visible', paddingTop: '10px' }}>
@@ -115,18 +115,18 @@ export default async function AdminAnalyticsPage() {
                 ))}
               </svg>
             </div>
-            
+
             {/* X-Axis Labels */}
             <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontFamily: '"Roboto Mono", monospace', color: '#6f7a70' }}>
-              <span style={{flex: 1, textAlign: 'center'}}>May</span>
-              <span style={{flex: 1, textAlign: 'center'}}>Jun</span>
-              <span style={{flex: 1, textAlign: 'center'}}>Jul</span>
-              <span style={{flex: 1, textAlign: 'center'}}>Aug</span>
-              <span style={{flex: 1, textAlign: 'center'}}>Sep</span>
-              <span style={{flex: 1, textAlign: 'center'}}>Oct</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Nov</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Dec</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Jan</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Feb</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Mar</span>
+              <span style={{ flex: 1, textAlign: 'center' }}>Apr</span>
             </div>
           </div>
-          
+
           <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(190, 201, 190, 0.15)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 500 }}>
               <div style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: '#efeded' }}></div>
@@ -142,7 +142,7 @@ export default async function AdminAnalyticsPage() {
         {/* Donut Chart Area (Simulated) */}
         <div style={{ flex: '1 1 250px', backgroundColor: '#f5f3f3', borderRadius: '16px', padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
           <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1b1c1c', alignSelf: 'flex-start', marginBottom: '32px' }}>Waste Categories</h3>
-          
+
           <div style={{ position: 'relative', width: '192px', height: '192px' }}>
             <svg style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)' }} viewBox="0 0 100 100">
               {topCategories.map(([type, count], index) => {
